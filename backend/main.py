@@ -136,10 +136,25 @@ app.add_middleware(
 
 @app.get("/health")
 def health_check():
+    db_alive = True
+    try:
+        from sqlalchemy import text
+        with engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
+    except Exception:
+        db_alive = False
+
     return {
-        "status": "healthy",
+        "status": "healthy" if db_alive else "degraded",
         "service": "smartcart-backend",
-        "database": engine.name
+        "database": engine.name,
+        "database_url_configured": bool(
+            os.getenv("DATABASE_URL")
+            or os.getenv("TARGET_DATABASE_URL")
+            or os.getenv("SUPABASE_DATABASE_URL")
+            or os.getenv("POSTGRES_URL")
+        ),
+        "environment": "render" if os.getenv("RENDER") else "local"
     }
 
 # Include API Routers with /api prefix
