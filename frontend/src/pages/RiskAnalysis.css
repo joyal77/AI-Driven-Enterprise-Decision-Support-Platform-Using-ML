@@ -1,0 +1,131 @@
+.risk-analysis-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.risk-tabs-header {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .risk-tabs-header {
+    flex-direction: column;
+  }
+}
+
+.risk-tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.risk-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+}
+
+.risk-tab-btn.high.active {
+  background: rgba(200, 16, 46, 0.25);
+  border-color: rgba(200, 16, 46, 0.6);
+  color: #fca5a5;
+  box-shadow: 0 0 20px rgba(200, 16, 46, 0.3);
+}
+
+.risk-tab-btn.med.active {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: rgba(245, 158, 11, 0.6);
+  color: #fde68a;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+.risk-tab-btn.low.active {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.6);
+  color: #a7f3d0;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.risk-members-card {
+  padding: 32px;
+}
+
+.card-top-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.card-top-title h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.count-pill {
+  font-size: 16px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+
+.risk-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.risk-table th {
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border-medium);
+  text-transform: uppercase;
+}
+
+.risk-table td {
+  padding: 20px;
+  font-size: 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+
+.risk-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tier-tag {
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.prob-tag-bold {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.prob-tag-bold.high { color: #fca5a5; }
+.prob-tag-bold.med { color: #fde68a; }
+.prob-tag-bold.low { color: #a7f3d0; }
+
+.empty-td {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-dim);
+}

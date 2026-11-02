@@ -1,0 +1,371 @@
+=== PAGE 1 ===
+MINI PROJECT – 20MCA245 | PANEL PRESENTATION
+AI-BASED ENTERPRISE DECISION SUPPORT 
+PLATFORM
+USING MACHINE LEARNING
+An Explainable AI-Driven Customer Churn Prediction & Sales Forecasting System
+STUDENT
+• Student Name: Joyal Jobai
+• Roll No: 34
+• Course: MCA, S3
+• Branch: Master of Computer Applications
+PROJECT GUIDANCE
+• Guide: Sukrith Lal
+• Designation: Assistant Professor
+• Department: Department of Computer Applications
+• Institution: ASIET / APJ Abdul Kalam Tech University
+=== PAGE 2 ===
+Introduction: Problem & Motivation
+Problem Domain Overview
+• Subscription Economy: Modern B2B SaaS, Telecom, and 
+Finance rely on recurring customer revenue for long-term 
+survival.
+• High Churn Cost: Acquiring a new customer costs 5x to 
+7x more than retaining an existing account. A 5% churn 
+reduction boosts profit by 25%–95%.
+• Decision Support Needs: Executive leadership requires 
+automated platforms combining predictive scoring with 
+actionable retention strategy.
+• Proactive Monitoring: Legacy tools act after customer 
+loss, whereas enterprise systems demand continuous risk 
+identification.
+Motivation Behind Selection
+• Explainable AI (XAI): Traditional ML models predict 
+churn probability but fail to explain why specific accounts 
+are leaving.
+• Bridging Data Silos: Customer databases, ML predictions, 
+root cause analysis, and retention playbooks exist in 
+fragmented silos.
+• Prescriptive Analytics: Legacy dashboards alert 
+managers of churn but offer no automated, personalized 
+retention action playbooks.
+• Unified Decision Platform: Building an end-to-end 
+decision system: MySQL → XGBoost → Risk Tiers → Root 
+Cause → SHAP → Recommendations.
+=== PAGE 3 ===
+MINI PROJECT – 20MCA245 | PAEL PRESENTATION
+Literature Review: Selected Research Papers 
+1. Big Data & Explainable AI for Customer Retention (IEEE Access 2024)
+• Paper Title & Ref:  "A Big Data-Driven Hybrid Model for Enhancing Streaming Service Customer Retention Through Churn Prediction 
+Integrated With Explainable AI"
+• Authors & Citation:  Usman Gani Joy, Kazi Ekramul Hoque, Mohammed Nazim Uddin, Linkon Chowdhury, Seung-Bo Park (IEEE Access, 
+2024)
+• Methodology:  Big Data-driven hybrid ML architecture combined with SHAP feature attribution.
+• Key Advantage:  Connects churn prediction directly with SHAP feature importance for actionable retention decisions.
+• Key Limitation:  Restricted to streaming domain; lacks automated prescriptive playbooks and live database integration.
+2. XGBoost Approach for Customer Retention (IEEE InCACCT 2025)
+• Paper Title & Ref:  "Predicting Bank Customer Churn: An XGBoost Approach to Enhancing Customer Retention"
+• Authors & Citation:  Ruchika Bhuria, Srinivas Aluvala (IEEE InCACCT, 2025)
+• Methodology:  Multi-level ML framework evaluating KNN, XGBoost, Random Forest, and SVM.
+• Key Advantage:  Provides strong empirical validation for XGBoost superiority in customer churn classification.
+• Key Limitation:  Focuses strictly on prediction accuracy; lacks SHAP explainability, root cause diagnosis, and action playbooks.
+=== PAGE 4 ===
+MINI PROJECT – 20MCA245 | PANEL PRESENTATION
+Literature Review: Selected Research Papers (Part 2)
+3. Early Warning Detection System for Churn (IEEE ICRTCST 2024)
+• Paper Title & Ref:  "A Novel Machine Learning-Based Early Warning Detection System for Business Customer Churn"
+• Authors & Citation:  Radha Raman Chandan, Ramaraj S., Sarishma, P. Praba Devi, et al. (IEEE ICRTCST, 2024)
+• Methodology:  Early warning detection architecture leveraging ML classifiers for business risk identification.
+• Key Advantage:  Establishes conceptual early-warning risk flow (Customer Behavior → Risk Identification → Action).
+• Key Limitation:  Lacks post-hoc SHAP feature attribution, root cause diagnostic mapping, and unified database support.
+4. XGBoost & SHAP Interpretability Analysis (DSFE 2025)
+• Paper Title & Ref:  "Prediction of Bank Credit Customers Churn Based on Machine Learning and Interpretability Analysis"
+• Authors & Citation:  Ying Li, Keyue Yan (Data Science in Finance and Economics, 2025)
+• Methodology:  XGBoost classifier + SHAP interpretability for bank credit churn detection.
+• Key Advantage:  Uses XGBoost and SHAP to determine how individual variables influence churn (~97% AUC).
+• Key Limitation:  Purely diagnostic research study; lacks automated prescriptive action playbooks and enterprise web platform.
+=== PAGE 5 ===
+Literature Review: Comparison Matrix
+Paper / Reference System Model Risk 
+Identification
+SHAP / XAI Root Cause Prescriptive 
+Action
+Unified 
+Platform
+Paper 1: Joy et al. (IEEE Access 2024) ML Hybrid ✓  Yes ✓  SHAP Partial ✕  No ✕  No
+Paper 2: Bhuria & Aluvala (IEEE 2025) ✓  XGBoost ✓  Yes ✕  No ✕  No ✕  No ✕  No
+Paper 3: Chandan et al. (IEEE 2024) ML Model ✓  Early Warning ✕  No ✕  No ✕  No ✕  No
+Paper 4: Li & Yan (DSFE 2025) ✓  XGBoost ✓  Yes ✓  SHAP ✓  Yes ✕  No ✕  No
+PROPOSED SYSTEM (Joyal Jobai) ✓  XGBoost ✓  
+High/Med/Low
+✓  SHAP ✓  Automated ✓  Playbooks ✓  End-to-
+End
+=== PAGE 6 ===
+Literature Review: Research Gap & Novelty
+Research Progression &Gap Identification
+EXISTING RESEARCH
+• ML Churn Scoring
+• Basic SHAP Plots
+• Early Warning Models
+MISSING INTEGRATION
+✖  No Prescriptive Actions
+✖  Disconnected Data Silos
+✖  Lack of Unified Decision UI
+PROPOSED PLATFORM
+✔  End-to-End Workflow
+✔  Root Cause + SHAP
+✔  Prescriptive Playbooks
+Core Research Gap Statement
+• Fragmented State-of-the-Art: Prior research treats churn classification, SHAP feature attribution, and early warning scoring as 
+isolated analytical techniques.
+• Diagnostic Void: Existing systems stop at raw prediction probabilities or static plots, failing to translate model output into 
+automated retention playbooks.
+• The Core Contribution & Novelty: No prior system seamlessly integrates MySQL Customer Database → XGBoost Churn 
+Prediction → High/Med/Low Risk Classification → Root Cause Analysis → SHAP Explainability → Prescriptive Action 
+Recommendations into a single unified enterprise decision-support platform.
+=== PAGE 7 ===
+Existing System: Overview & Critical Limitations
+Existing Approaches
+• Traditional BI Dashboards: Reports (Tableau/PowerBI) 
+show historical churn numbers after accounts have already 
+cancelled.
+• Manual Monthly Audits: CSMs manually review 
+customer logs using basic spreadsheet rules and subjective 
+judgment.
+• Isolated Statistical Models: Standard logistic regression 
+scripts operate in standalone environments disconnected 
+from live CRM databases.
+• Unstructured Retention Process: Account intervention 
+relies on ad-hoc phone calls without standardized risk-tier 
+playbooks.
+Critical Limitations
+✕  Reactive Detection: Churn is detected after accounts 
+have ceased activity, missing critical early intervention 
+windows.
+✕  Black-Box AI Opacity: ML models output raw risk scores 
+(e.g., 85% risk) without explaining individual feature 
+drivers.
+✕  Manual Intervention: Account managers must 
+manually investigate churn causes, delaying outreach by 
+days or weeks.
+✕  Data Fragmentation: CRM logs, predictive models, and 
+retention steps exist in silos, incurring 5x-7x re-acquisition 
+costs.
+=== PAGE 8 ===
+Proposed System: Overview & Key Features
+High-Level System Overview
+• End-to-End Decision Support: An Explainable AI platform 
+turning raw customer telemetry into real-time retention 
+decisions.
+• Continuous Data Ingestion: Connects directly to MySQL 
+databases for automated batch churn prediction and risk 
+scoring.
+• Transparent Risk Scoring: Combines high-accuracy 
+XGBoost predictions with SHAP TreeExplainer feature 
+attributions.
+• Prescriptive Playbooks: Automatically maps negative 
+feature attributions and operational friction to targeted 
+retention playbooks.
+1. MySQL Customer 
+Database
+Central relational storage for 
+customer telemetry and 
+prediction logs.
+2. XGBoost Churn Model
+High-performance ML model 
+scoring churn risk with >94% 
+accuracy.
+3. Risk Classification
+Categorizes accounts into High 
+Risk, Medium Risk, and Low Risk 
+tiers.
+4. Root Cause Engine
+Identifies operational friction 
+vectors (support spikes, usage 
+drops).
+5. SHAP Explainability
+Derives local Shapley values 
+showing exact positive & 
+negative impacts.
+6. Prescriptive Playbooks
+Automates retention 
+recommendations (CSM 
+outreach, discounts) for action.
+=== PAGE 9 ===
+System Architecture: Data Flow Pipeline
+Proposed System Architectural Pipeline
+MySQL Customer 
+Data
+(Database Storage)
+XGBoost Churn 
+Model
+(Predictive Engine)
+Risk Classification
+(High / Med / Low)
+Root Cause 
+Analysis
+(Diagnostic Engine)
+SHAP 
+Explainability
+(Feature Attribution)
+Prescriptive Action
+(Action Playbooks)
+Business Decision
+(Executive Action)
+Pipeline Stage Execution Summary
+• Data Ingestion & Scoring: MySQL telemetry logs are fetched, normalized via StandardScaler, and passed to the XGBoost 
+Classifier.
+• Risk Triage & Explanation: Accounts are scored into High (>70%), Medium (40-70%), and Low (<40%) risk tiers; SHAP computes 
+exact feature contributions.
+• Prescriptive Recommendation: Negative feature drivers trigger rule-based playbooks (CSM dispatch, discount offers) for instant 
+executive decision-making.
+=== PAGE 10 ===
+Methodology & Core ML/XAI Modules
+Predictive & XAI Modules
+• XGBoost Classifier Model: Gradient boosted decision 
+trees optimized via Optuna hyperparameter tuning for 
+churn probability scoring.
+• SHAP TreeExplainer: Computes local Shapley values 
+breaking down individual feature impacts (+/-) per 
+customer account.
+• Class Imbalance Handling: Utilizes SMOTE (Synthetic 
+Minority Over-sampling Technique) to balance churn and 
+non-churn classes.
+Diagnostic & Prescriptive Modules
+• Root Cause Diagnostic Engine: Evaluates top negative 
+SHAP features against operational telemetry (support 
+tickets, payment delays, login drops).
+• Prescriptive Action Engine: Rule-driven recommendation 
+engine mapping root causes to automated playbooks (CSM 
+assignment, discounts, training).
+• Executive SPA Dashboard: Modern web dashboard 
+serving interactive SHAP waterfall plots, risk tables, and 
+retention workflow cards.
+=== PAGE 11 ===
+Technology Stack & Tools
+Programming
+Python 3.11: Primary backend language for ML modeling, 
+SHAP calculation, and API services.
+JavaScript (ES6+): Dynamic frontend logic for interactive web 
+dashboard components.
+HTML5 & CSS3: Clean semantic layout and modern responsive 
+dashboard styling.
+ML & Frameworks
+XGBoost & Scikit-Learn: High-performance ML classification, 
+regression, and feature scaling.
+SHAP Library: Post-hoc TreeExplainer for local & global feature 
+interpretability.
+Flask / FastAPI & React: Lightweight Python REST backend API 
+& React SPA frontend UI.
+Database
+MySQL 8.0: Relational database storing customer telemetry, 
+transaction logs, and predictions.
+SQLAlchemy & PyMySQL: Python ORM interface for secure, 
+efficient database queries.
+JSON Models: Serialized model artifacts (`churn_model.json`, 
+`scaler.pkl`).
+Development Tools
+VS Code & PyCharm: Primary Integrated Development 
+Environments (IDEs).
+Git & GitHub: Version control, code tracking, and repository 
+management.
+Jupyter & Postman: Model experimentation, EDA, and REST 
+API endpoint testing.
+=== PAGE 12 ===
+Sprint Planner: Agile Development Roadmap
+SPRINT 1 (WEEKS 1-3) — COMPLETED 
+✔
+• Major Tasks: Requirements gathering, dataset EDA, baseline 
+XGBoost model, MySQL schema design.
+• Deliverable: Clean dataset, trained model 
+(`churn_model.json`), initial database schema.
+• Status: 100% Completed & Verified.
+SPRINT 2 (WEEKS 4-6) — IN 
+PROGRESS 
+• Major Tasks: SHAP TreeExplainer pipeline, root cause rule 
+engine, Flask REST API endpoints.
+• Deliverable: Functional XAI API backend, SHAP waterfall plot 
+generator, rule mapping.
+• Status: Active Development.
+SPRINT 3 (WEEKS 7-9) — PLANNED 
+• Major Tasks: React SPA dashboard UI, High/Med/Low risk 
+triage cards, action playbook UI.
+• Deliverable: Interactive executive web dashboard, action 
+playbook module.
+• Status: Scheduled.
+SPRINT 4 (WEEKS 10-12) — PLANNED 
+
+• Major Tasks: End-to-end integration, database query 
+optimization, testing, final documentation.
+• Deliverable: Fully integrated Decision Support Platform & 
+final project report.
+• Status: Scheduled.
+=== PAGE 13 ===
+Sprint 1 Results & Metrics
+94.2%
+ACCURACY
+0.954
+AUC-ROC
+0.910
+PRECISION
+0.890
+RECALL
+Sprint 1 Deliverables Achieved
+✔  Dataset Acquisition & Cleaning: Processed 10,000+ 
+customer records; handled missing values, encoding, and 
+scaling.
+✔  XGBoost Classifier Model: Trained baseline model with 
+80/20 train-test split and Optuna hyperparameter optimization.
+✔  MySQL Database Schema: Designed and deployed tables 
+storing customer profiles, transaction history, and telemetry 
+logs.
+✔  Core Execution Scripts: Developed Python pipelines 
+connecting SQL queries directly to model inference endpoints.
+Current Project Status
+• Sprint 1 Status: 100% Completed & Verified. Baseline model 
+pipeline fully operational.
+• Active Phase: Sprint 2 — SHAP TreeExplainer XAI integration 
+& Rule Engine development in progress.
+• Roadmap Adherence: On schedule for Sprint 3 React SPA 
+Executive Dashboard development.
+• Validation Check: Model metrics verified with zero 
+text/boundary overflow issues.
+=== PAGE 14 ===
+Expected Outcomes & Conclusion
+Expected Outcomes
+• 15–20% Churn Reduction
+Proactive early warning risk triage 
+enables timely account retention.
+• <2 sec Explainability
+Instant SHAP feature attributions and 
+automated root cause analysis.
+• Actionable Playbooks
+Replaces guesswork with automated 
+retention recommendations.
+Real-World Applications
+• B2B SaaS Enterprises
+Subscription retention management 
+and automated customer success 
+workflows.
+• Banking & FinTech
+Credit account churn monitoring, 
+deposit retention, and personalized 
+offers.
+• Telecom & Utilities
+Contract renewal optimization, tariff 
+adjustments, and proactive support.
+Future Scope
+• Real-Time Ingestion
+Apache Kafka streaming pipeline for 
+instant transaction telemetry 
+processing.
+• LLM Decision Summaries
+Generative AI natural language 
+executive briefing reports.
+• Multi-Tenant Cloud
+Dockerized microservices architecture 
+with AWS/GCP deployment.
+=== PAGE 15 ===
+References & Academic Bibliography
+Academic Literature Citations (IEEE Format)
+[1]  Joy, U. G., Hoque, K. E., Uddin, M. N., Chowdhury, L., & Park, S.-B., "A Big Data-Driven Hybrid Model for Enhancing Streaming Service 
+Customer Retention Through Churn Prediction Integrated With Explainable AI," IEEE Access, vol. 12, pp. 69130–69150, 2024, doi: 
+10.1109/ACCESS.2024.3401247.
+[2]  Bhuria, R., & Aluvala, S., "Predicting Bank Customer Churn: An XGBoost Approach to Enhancing Customer Retention," in Proc. 2025 3rd 
+International Conference on Advancement in Computation & Computer Technologies (InCACCT), IEEE, 2025, doi: 
+10.1109/InCACCT65424.2025.11011351.
+[3]  Chandan, R. R., Ramaraj, S., Sarishma, & Devi, P. P., et al., "A Novel Machine Learning-Based Early Warning Detection System for 
+Business Customer Churn," in Proc. 5th International Conference on Recent Trends in Computer Science and Technology (ICRTCST), IEEE, 
+2024, doi: 10.1109/ICRTCST61793.2024.10578489.
+[4]  Li, Y., & Yan, K., "Prediction of Bank Credit Customers Churn Based on Machine Learning and Interpretability Analysis," Data Science in 
+Finance and Economics, vol. 5, no. 1, pp. 25–42, 2025, doi: 10.3934/DSFE.2025002.

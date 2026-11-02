@@ -1,0 +1,61 @@
+.skeleton-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skeleton-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skeleton-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+}
+
+.skeleton-badge {
+  width: 60px;
+  height: 20px;
+  border-radius: var(--radius-full);
+}
+
+.skeleton-title {
+  height: 14px;
+  width: 60%;
+}
+
+.skeleton-value {
+  height: 36px;
+  width: 80%;
+}
+
+.skeleton-subtitle {
+  height: 12px;
+  width: 50%;
+}
+
+.skeleton-chart {
+  height: 280px;
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+.skeleton-row td {
+  padding: 16px;
+}
+
+.skeleton-text {
+  height: 16px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-button {
+  height: 32px;
+  width: 110px;
+  border-radius: var(--radius-md);
+}

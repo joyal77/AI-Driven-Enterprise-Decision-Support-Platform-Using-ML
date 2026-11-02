@@ -1,0 +1,254 @@
+.upload-container-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 1050px) {
+  .upload-container-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.upload-card {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dropzone-area {
+  position: relative;
+  border: 2px dashed var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 44px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.dropzone-area:hover {
+  background: rgba(200, 16, 46, 0.06);
+  border-color: var(--accent-primary);
+}
+
+.file-input-hidden {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.dropzone-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
+}
+
+.dropzone-text .sub-text {
+  font-size: 15px;
+  color: var(--text-dim);
+}
+
+.selected-file-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  font-size: 18px;
+}
+
+.file-name {
+  color: var(--text-main);
+}
+
+.file-size {
+  color: var(--text-muted);
+}
+
+.upload-error-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  color: #fda4af;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.upload-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .upload-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.upload-submit-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 28px;
+  border-radius: var(--radius-md);
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-glow);
+  transition: all 0.25s ease;
+}
+
+.upload-submit-btn:hover:not(:disabled) {
+  background: var(--accent-primary-hover);
+  transform: translateY(-2px);
+}
+
+.upload-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sample-csv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 22px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.sample-csv-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.upload-summary-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.result-success-card, .preview-card {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.res-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.res-header h3 {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.res-sub {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.res-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.res-stat-box {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.res-stat-box .lbl {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.res-stat-box .val {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.sub-desc {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.preview-table-wrapper {
+  overflow-x: auto;
+}
+
+.preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.preview-table th {
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border-medium);
+}
+
+.preview-table td {
+  padding: 12px 14px;
+  font-size: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.no-preview-box {
+  padding: 48px 24px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--text-dim);
+  text-align: center;
+}

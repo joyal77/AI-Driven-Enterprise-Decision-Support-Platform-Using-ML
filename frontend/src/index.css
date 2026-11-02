@@ -1,0 +1,234 @@
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Amazon Ember", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* Amazon Official Brand Color System */
+  --amazon-navy-dark: #131921;       /* Amazon top bar dark navy */
+  --amazon-navy-light: #232f3e;      /* Amazon secondary nav / sidebar background */
+  --amazon-amber: #ff9900;           /* Amazon signature logo smile & accent */
+  --amazon-orange: #ff9900;          /* Amazon active state & highlights */
+  --amazon-gold: #ffd814;            /* Amazon Buy Box / primary CTA yellow */
+  --amazon-gold-border: #fcd200;     /* Amazon Buy Box border */
+  --amazon-gold-hover: #f7ca00;      /* Amazon Buy Box hover */
+  --amazon-orange-btn: #ffa41c;      /* Amazon secondary orange button */
+  --amazon-orange-hover: #fa8900;    /* Amazon orange button hover */
+  --amazon-teal: #007185;            /* Amazon link & info teal */
+  --amazon-teal-hover: #c7511f;      /* Amazon link hover / alert orange */
+  --amazon-gray-bg: #eaeded;         /* Amazon iconic light gray body background */
+  --amazon-card-bg: #ffffff;         /* Amazon clean card background */
+  --amazon-border: #d5d9d9;          /* Amazon light card border */
+  --amazon-border-hover: #999999;
+  --amazon-text-main: #0f1111;       /* Amazon primary text black */
+  --amazon-text-muted: #565959;      /* Amazon secondary text gray */
+
+  --bg-dark: #131921;
+  --bg-surface: #232f3e;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --bg-main: #eaeded;
+  
+  --primary-color: #ff9900;
+  --primary-hover: #e68a00;
+  --cta-btn-bg: #ffd814;
+  --cta-btn-border: #fcd200;
+  --cta-btn-hover: #f7ca00;
+
+  --risk-high: #cc0c39;              /* Amazon Alert Crimson */
+  --risk-medium: #c7511f;            /* Amazon Alert Amber */
+  --risk-low: #007600;               /* Amazon Success Green */
+
+  --shadow-sm: 0 1px 3px rgba(15, 17, 17, 0.15);
+  --shadow-md: 0 4px 16px rgba(15, 17, 17, 0.12);
+  --shadow-lg: 0 8px 30px rgba(15, 17, 17, 0.15);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
+  background-color: var(--amazon-gray-bg);
+  color: var(--amazon-text-main);
+  font-family: var(--font-sans);
+  font-size: 15px;                  /* Standard enterprise dashboard typography scale */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eaeded;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b5b9b9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888c8c;
+}
+
+/* Focus Outline */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #ff9900;
+  outline-offset: 2px;
+}
+
+/* Select & Option Styling */
+select {
+  background-color: #ffffff;
+  color: #0f1111;
+  border: 1px solid var(--amazon-border);
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 13.5px;
+  font-family: var(--font-sans);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+select:focus {
+  border-color: #ff9900;
+  box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.2);
+}
+
+select option {
+  background-color: #ffffff;
+  color: #0f1111;
+  padding: 8px;
+  font-size: 13.5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* Global Button Styles (Amazon Yellow Buy Box & Orange CTA) */
+.btn-primary, .btn-amazon-gold {
+  background: linear-gradient(to bottom, #ffd814, #f7ca00);
+  border: 1px solid #fcd200;
+  border-radius: 6px;
+  color: #0f1111;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 0.55rem 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(213, 217, 217, 0.6);
+  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover, .btn-amazon-gold:hover {
+  background: linear-gradient(to bottom, #f7ca00, #f0b800);
+  border-color: #f2c200;
+  box-shadow: 0 2px 6px rgba(15, 17, 17, 0.18);
+  transform: translateY(-1px);
+}
+
+.btn-amazon-orange {
+  background: linear-gradient(to bottom, #ffa41c, #fa8900);
+  border: 1px solid #ff8f00;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 0.55rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-amazon-orange:hover {
+  background: linear-gradient(to bottom, #fa8900, #e07b00);
+  transform: translateY(-1px);
+}
+
+.btn-amazon-dark {
+  background-color: #232f3e;
+  border: 1px solid #131921;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13.5px;
+  padding: 0.55rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-amazon-dark:hover {
+  background-color: #37475a;
+  transform: translateY(-1px);
+}
+
+/* Mini Copy Button for Customer ID */
+.btn-copy-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #374151;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.btn-copy-mini:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+  color: #111827;
+}
+
+.btn-copy-mini.copied {
+  background-color: #dcfce7 !important;
+  border-color: #86efac !important;
+  color: #15803d !important;
+}
+
+.btn-copy-mini.dark {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #febd69;
+}
+
+.btn-copy-mini.dark:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+.btn-copy-mini.dark.copied {
+  background-color: #15803d !important;
+  border-color: #22c55e !important;
+  color: #ffffff !important;
+}

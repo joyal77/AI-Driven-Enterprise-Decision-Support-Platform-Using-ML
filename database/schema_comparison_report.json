@@ -1,0 +1,2539 @@
+{
+  "audit_timestamp": "2026-11-02T22:30:00Z",
+  "summary": {
+    "sqlite_total_tables": 14,
+    "postgres_total_tables": 14,
+    "tables_match": true,
+    "sqlite_total_columns": 165,
+    "postgres_total_columns": 165,
+    "sqlite_physical_fks": 13,
+    "postgres_defined_fks": 14,
+    "all_source_columns_present_in_postgres": true,
+    "primary_keys_preserved": true,
+    "data_types_compatible": true
+  },
+  "tables": {
+    "cart_items": {
+      "table_name": "cart_items",
+      "exists_in_postgres": true,
+      "source_column_count": 6,
+      "target_column_count": 6,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "customer_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "product_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "quantity": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "1",
+          "compatible": true
+        },
+        "created_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "updated_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [
+        {
+          "target_table": "products",
+          "from_col": "product_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        },
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "target_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id"
+        },
+        {
+          "target_table": "products",
+          "from_col": "product_id",
+          "to_col": "id"
+        }
+      ],
+      "target_indexes": [
+        {
+          "name": "ix_cart_items_customer_id",
+          "unique": false,
+          "columns": "customer_id"
+        },
+        {
+          "name": "ix_cart_items_product_id",
+          "unique": false,
+          "columns": "product_id"
+        }
+      ]
+    },
+    "churn_predictions": {
+      "table_name": "churn_predictions",
+      "exists_in_postgres": true,
+      "source_column_count": 10,
+      "target_column_count": 10,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "customer_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "churn_probability": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "churn_prediction": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "risk_category": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "model_version": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'Random Forest v1.0'",
+          "compatible": true
+        },
+        "prediction_timestamp": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "shap_explanation": {
+          "present_in_target": true,
+          "source_type": "TEXT",
+          "target_type": "TEXT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "root_causes": {
+          "present_in_target": true,
+          "source_type": "TEXT",
+          "target_type": "TEXT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "recommendations": {
+          "present_in_target": true,
+          "source_type": "TEXT",
+          "target_type": "TEXT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "target_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id"
+        }
+      ],
+      "target_indexes": [
+        {
+          "name": "ix_churn_predictions_customer_id",
+          "unique": false,
+          "columns": "customer_id"
+        },
+        {
+          "name": "ix_churn_predictions_risk_category",
+          "unique": false,
+          "columns": "risk_category"
+        }
+      ]
+    },
+    "customer_notifications": {
+      "table_name": "customer_notifications",
+      "exists_in_postgres": true,
+      "source_column_count": 17,
+      "target_column_count": 17,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "customer_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "campaign_id": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "title": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(255)",
+          "target_type": "VARCHAR(255)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "message": {
+          "present_in_target": true,
+          "source_type": "TEXT",
+          "target_type": "TEXT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "channel": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'Storefront Notification'",
+          "compatible": true
+        },
+        "sender": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(150)",
+          "target_type": "VARCHAR(150)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'SmartCart Concierge'",
+          "compatible": true
+        },
+        "coupon_code": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "perk_type": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "perk_value": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "0.0",
+          "compatible": true
+        },
+        "is_read": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "0",
+          "compatible": true
+        },
+        "dispatch_status": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'Delivered'",
+          "compatible": true
+        },
+        "created_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "updated_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "notification_type": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "'retention_perk'",
+          "target_default": "'retention_perk'",
+          "compatible": true
+        },
+        "navigation_target": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(255)",
+          "target_type": "VARCHAR(255)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "'/store/cart'",
+          "target_default": "'/store/cart'",
+          "compatible": true
+        },
+        "image_url": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(500)",
+          "target_type": "VARCHAR(500)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "target_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id"
+        }
+      ],
+      "target_indexes": [
+        {
+          "name": "ix_customer_notifications_customer_id",
+          "unique": false,
+          "columns": "customer_id"
+        },
+        {
+          "name": "ix_customer_notifications_campaign_id",
+          "unique": false,
+          "columns": "campaign_id"
+        }
+      ]
+    },
+    "customer_perk_redemptions": {
+      "table_name": "customer_perk_redemptions",
+      "exists_in_postgres": true,
+      "source_column_count": 11,
+      "target_column_count": 11,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "customer_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "order_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "order_number": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "perk_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "campaign_id": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "benefit_type": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "coupon_code": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "discount_amount": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "0.0",
+          "compatible": true
+        },
+        "redemption_date": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "status": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'Redeemed'",
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [
+        {
+          "target_table": "customer_retention_perks",
+          "from_col": "perk_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        },
+        {
+          "target_table": "orders",
+          "from_col": "order_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        },
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "target_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id"
+        },
+        {
+          "target_table": "orders",
+          "from_col": "order_id",
+          "to_col": "id"
+        },
+        {
+          "target_table": "customer_retention_perks",
+          "from_col": "perk_id",
+          "to_col": "id"
+        }
+      ],
+      "target_indexes": [
+        {
+          "name": "ix_customer_perk_redemptions_customer_id",
+          "unique": false,
+          "columns": "customer_id"
+        },
+        {
+          "name": "ix_customer_perk_redemptions_order_id",
+          "unique": false,
+          "columns": "order_id"
+        },
+        {
+          "name": "ix_customer_perk_redemptions_order_number",
+          "unique": false,
+          "columns": "order_number"
+        },
+        {
+          "name": "ix_customer_perk_redemptions_campaign_id",
+          "unique": false,
+          "columns": "campaign_id"
+        },
+        {
+          "name": "ix_customer_perk_redemptions_coupon_code",
+          "unique": false,
+          "columns": "coupon_code"
+        }
+      ]
+    },
+    "customer_retention_perks": {
+      "table_name": "customer_retention_perks",
+      "exists_in_postgres": true,
+      "source_column_count": 19,
+      "target_column_count": 19,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "customer_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "campaign_id": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "title": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(255)",
+          "target_type": "VARCHAR(255)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "perk_type": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "perk_value": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "0.0",
+          "compatible": true
+        },
+        "coupon_code": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "status": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'Approved'",
+          "compatible": true
+        },
+        "action_summary": {
+          "present_in_target": true,
+          "source_type": "TEXT",
+          "target_type": "TEXT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "root_cause_driver": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(255)",
+          "target_type": "VARCHAR(255)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "channel": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "created_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "updated_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "free_shipping": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "0",
+          "target_default": "0",
+          "compatible": true
+        },
+        "coupon_used": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "0",
+          "target_default": "0",
+          "compatible": true
+        },
+        "shipping_used": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "0",
+          "target_default": "0",
+          "compatible": true
+        },
+        "used_order_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "used_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "is_single_use": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "1",
+          "target_default": "1",
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "target_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id"
+        },
+        {
+          "target_table": "orders",
+          "from_col": "used_order_id",
+          "to_col": "id"
+        }
+      ],
+      "target_indexes": [
+        {
+          "name": "ix_customer_retention_perks_customer_id",
+          "unique": false,
+          "columns": "customer_id"
+        },
+        {
+          "name": "ix_customer_retention_perks_campaign_id",
+          "unique": false,
+          "columns": "campaign_id"
+        },
+        {
+          "name": "ix_customer_retention_perks_status",
+          "unique": false,
+          "columns": "status"
+        }
+      ]
+    },
+    "customers": {
+      "table_name": "customers",
+      "exists_in_postgres": true,
+      "source_column_count": 28,
+      "target_column_count": 28,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "source_customer_id": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "signup_date": {
+          "present_in_target": true,
+          "source_type": "DATE",
+          "target_type": "DATE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "customer_age": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "gender": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "city_tier": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "membership_status": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "days_since_last_purchase": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "total_orders_lifetime": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "orders_last_30d": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "orders_prev_30_to_60d": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "total_spend_inr": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "avg_order_value": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "preferred_category": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "sessions_last_30d": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "avg_session_duration_min": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "cart_abandonments_last_30d": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "search_queries_last_30d": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "return_count": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "return_rate": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "cancellations_count": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "late_deliveries_count": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "customer_service_tickets": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "avg_rating_given": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "preferred_payment_mode": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "ground_truth_churn": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "created_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "updated_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [],
+      "target_foreign_keys": [],
+      "target_indexes": [
+        {
+          "name": "ix_customers_source_customer_id",
+          "unique": false,
+          "columns": "source_customer_id"
+        },
+        {
+          "name": "ix_customers_city_tier",
+          "unique": false,
+          "columns": "city_tier"
+        },
+        {
+          "name": "ix_customers_membership_status",
+          "unique": false,
+          "columns": "membership_status"
+        },
+        {
+          "name": "ix_customers_days_since_last_purchase",
+          "unique": false,
+          "columns": "days_since_last_purchase"
+        },
+        {
+          "name": "ix_customers_preferred_category",
+          "unique": false,
+          "columns": "preferred_category"
+        },
+        {
+          "name": "ix_customers_ground_truth_churn",
+          "unique": false,
+          "columns": "ground_truth_churn"
+        }
+      ]
+    },
+    "data_integrity_audit_log": {
+      "table_name": "data_integrity_audit_log",
+      "exists_in_postgres": true,
+      "source_column_count": 9,
+      "target_column_count": 9,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "check_type": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "customer_id": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "severity": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(20)",
+          "target_type": "VARCHAR(20)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'INFO'",
+          "compatible": true
+        },
+        "expected_value": {
+          "present_in_target": true,
+          "source_type": "TEXT",
+          "target_type": "TEXT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "observed_value": {
+          "present_in_target": true,
+          "source_type": "TEXT",
+          "target_type": "TEXT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "resolution_status": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'Reconciled'",
+          "compatible": true
+        },
+        "details": {
+          "present_in_target": true,
+          "source_type": "TEXT",
+          "target_type": "TEXT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "created_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [],
+      "target_foreign_keys": [],
+      "target_indexes": [
+        {
+          "name": "ix_data_integrity_audit_log_check_type",
+          "unique": false,
+          "columns": "check_type"
+        },
+        {
+          "name": "ix_data_integrity_audit_log_customer_id",
+          "unique": false,
+          "columns": "customer_id"
+        },
+        {
+          "name": "ix_data_integrity_audit_log_severity",
+          "unique": false,
+          "columns": "severity"
+        },
+        {
+          "name": "ix_data_integrity_audit_log_resolution_status",
+          "unique": false,
+          "columns": "resolution_status"
+        }
+      ]
+    },
+    "order_items": {
+      "table_name": "order_items",
+      "exists_in_postgres": true,
+      "source_column_count": 6,
+      "target_column_count": 6,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "order_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "product_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "quantity": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "1",
+          "compatible": true
+        },
+        "unit_price": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "total_price": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [
+        {
+          "target_table": "products",
+          "from_col": "product_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        },
+        {
+          "target_table": "orders",
+          "from_col": "order_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "target_foreign_keys": [
+        {
+          "target_table": "orders",
+          "from_col": "order_id",
+          "to_col": "id"
+        },
+        {
+          "target_table": "products",
+          "from_col": "product_id",
+          "to_col": "id"
+        }
+      ],
+      "target_indexes": [
+        {
+          "name": "ix_order_items_order_id",
+          "unique": false,
+          "columns": "order_id"
+        },
+        {
+          "name": "ix_order_items_product_id",
+          "unique": false,
+          "columns": "product_id"
+        }
+      ]
+    },
+    "orders": {
+      "table_name": "orders",
+      "exists_in_postgres": true,
+      "source_column_count": 16,
+      "target_column_count": 16,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "order_number": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "customer_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "order_date": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "order_amount": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "subtotal": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "tax_amount": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "0.0",
+          "compatible": true
+        },
+        "shipping_amount": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "0.0",
+          "compatible": true
+        },
+        "discount": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "0.0",
+          "compatible": true
+        },
+        "payment_mode": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'UPI'",
+          "compatible": true
+        },
+        "order_status": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'Confirmed'",
+          "compatible": true
+        },
+        "shipping_address": {
+          "present_in_target": true,
+          "source_type": "TEXT",
+          "target_type": "TEXT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "return_status": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'None'",
+          "compatible": true
+        },
+        "voucher_code": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "wallet_credit_used": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "0.0",
+          "target_default": "0.0",
+          "compatible": true
+        },
+        "free_shipping_applied": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "0",
+          "target_default": "0",
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "target_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id"
+        }
+      ],
+      "target_indexes": [
+        {
+          "name": "ix_orders_order_number",
+          "unique": false,
+          "columns": "order_number"
+        },
+        {
+          "name": "ix_orders_customer_id",
+          "unique": false,
+          "columns": "customer_id"
+        },
+        {
+          "name": "ix_orders_order_status",
+          "unique": false,
+          "columns": "order_status"
+        }
+      ]
+    },
+    "prediction_batches": {
+      "table_name": "prediction_batches",
+      "exists_in_postgres": true,
+      "source_column_count": 7,
+      "target_column_count": 7,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "batch_status": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'Completed'",
+          "compatible": true
+        },
+        "total_customers": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "0",
+          "compatible": true
+        },
+        "processed_customers": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "0",
+          "compatible": true
+        },
+        "failed_customers": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "0",
+          "compatible": true
+        },
+        "created_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "completed_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [],
+      "target_foreign_keys": [],
+      "target_indexes": [
+        {
+          "name": "ix_prediction_batches_batch_status",
+          "unique": false,
+          "columns": "batch_status"
+        }
+      ]
+    },
+    "products": {
+      "table_name": "products",
+      "exists_in_postgres": true,
+      "source_column_count": 16,
+      "target_column_count": 16,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "sku": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "title": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(200)",
+          "target_type": "VARCHAR(200)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "product_name": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(200)",
+          "target_type": "VARCHAR(200)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "category": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "price": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "original_price": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "stock_quantity": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "100",
+          "compatible": true
+        },
+        "rating": {
+          "present_in_target": true,
+          "source_type": "FLOAT",
+          "target_type": "DOUBLE",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "4.5",
+          "compatible": true
+        },
+        "rating_count": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "120",
+          "compatible": true
+        },
+        "image_url": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(500)",
+          "target_type": "VARCHAR(500)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "description": {
+          "present_in_target": true,
+          "source_type": "TEXT",
+          "target_type": "TEXT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "is_prime": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "1",
+          "compatible": true
+        },
+        "is_active": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "INTEGER",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "1",
+          "compatible": true
+        },
+        "created_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "updated_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [],
+      "target_foreign_keys": [],
+      "target_indexes": [
+        {
+          "name": "ix_products_sku",
+          "unique": false,
+          "columns": "sku"
+        },
+        {
+          "name": "ix_products_title",
+          "unique": false,
+          "columns": "title"
+        },
+        {
+          "name": "ix_products_category",
+          "unique": false,
+          "columns": "category"
+        }
+      ]
+    },
+    "retention_recommendations": {
+      "table_name": "retention_recommendations",
+      "exists_in_postgres": true,
+      "source_column_count": 7,
+      "target_column_count": 7,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "customer_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "recommendation_type": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "recommendation_description": {
+          "present_in_target": true,
+          "source_type": "TEXT",
+          "target_type": "TEXT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "status": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'Pending'",
+          "compatible": true
+        },
+        "created_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        },
+        "updated_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "target_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id"
+        }
+      ],
+      "target_indexes": [
+        {
+          "name": "ix_retention_recommendations_customer_id",
+          "unique": false,
+          "columns": "customer_id"
+        },
+        {
+          "name": "ix_retention_recommendations_status",
+          "unique": false,
+          "columns": "status"
+        }
+      ]
+    },
+    "store_users": {
+      "table_name": "store_users",
+      "exists_in_postgres": true,
+      "source_column_count": 7,
+      "target_column_count": 7,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "username": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "password_hash": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(255)",
+          "target_type": "VARCHAR(255)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "role": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "customer_id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "full_name": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(150)",
+          "target_type": "VARCHAR(150)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "created_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "target_foreign_keys": [
+        {
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id"
+        }
+      ],
+      "target_indexes": [
+        {
+          "name": "ix_store_users_username",
+          "unique": false,
+          "columns": "username"
+        },
+        {
+          "name": "ix_store_users_role",
+          "unique": false,
+          "columns": "role"
+        },
+        {
+          "name": "ix_store_users_customer_id",
+          "unique": false,
+          "columns": "customer_id"
+        }
+      ]
+    },
+    "users": {
+      "table_name": "users",
+      "exists_in_postgres": true,
+      "source_column_count": 6,
+      "target_column_count": 6,
+      "columns": {
+        "id": {
+          "present_in_target": true,
+          "source_type": "INTEGER",
+          "target_type": "BIGINT",
+          "source_pk": true,
+          "target_pk": true,
+          "source_notnull": true,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "AS IDENTITY",
+          "compatible": true
+        },
+        "name": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "email": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(100)",
+          "target_type": "VARCHAR(100)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "password_hash": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(255)",
+          "target_type": "VARCHAR(255)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": true,
+          "target_notnull": true,
+          "source_default": null,
+          "target_default": null,
+          "compatible": true
+        },
+        "role": {
+          "present_in_target": true,
+          "source_type": "VARCHAR(50)",
+          "target_type": "VARCHAR(50)",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": null,
+          "target_default": "'admin'",
+          "compatible": true
+        },
+        "created_at": {
+          "present_in_target": true,
+          "source_type": "TIMESTAMP",
+          "target_type": "TIMESTAMP",
+          "source_pk": false,
+          "target_pk": false,
+          "source_notnull": false,
+          "target_notnull": false,
+          "source_default": "CURRENT_TIMESTAMP",
+          "target_default": "CURRENT_TIMESTAMP",
+          "compatible": true
+        }
+      },
+      "source_foreign_keys": [],
+      "target_foreign_keys": [],
+      "target_indexes": [
+        {
+          "name": "ix_users_email",
+          "unique": false,
+          "columns": "email"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,669 @@
+/* ==========================================================================
+   SmartCart Minimalist E-Commerce Header Styles
+   Clean, compact white header with subtle borders & responsive layout
+   ========================================================================== */
+
+.smartcart-header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ==========================================================================
+   1. TOP NAVIGATION BAR
+   Layout: SmartCart | Search Products... | Deliver to... | Account ▼ | Cart (count) | Sign Out
+   ========================================================================== */
+
+.smartcart-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px 24px;
+  background-color: #ffffff;
+  min-height: 58px;
+}
+
+/* Brand Logo */
+.smartcart-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: opacity 0.15s ease;
+  flex-shrink: 0;
+}
+
+.smartcart-brand:hover {
+  opacity: 0.9;
+}
+
+.brand-logo-group {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.brand-smart {
+  color: #0f172a;
+}
+
+.brand-cart {
+  color: #ff9900;
+}
+
+.brand-smile {
+  position: absolute;
+  bottom: -4px;
+  left: 2px;
+  right: 2px;
+  height: 5px;
+  border-bottom: 2.5px solid #ff9900;
+  border-radius: 50%;
+}
+
+.brand-domain {
+  font-size: 13px;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-left: 2px;
+  margin-top: -6px;
+}
+
+/* Product Search Bar */
+.smartcart-search-bar {
+  flex: 1;
+  max-width: 680px;
+  min-width: 220px;
+  display: flex;
+  height: 40px;
+  background: #ffffff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.smartcart-search-bar:focus-within {
+  border-color: #ff9900;
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
+}
+
+.search-category-select {
+  background-color: #f8fafc;
+  border: none;
+  border-right: 1px solid #e2e8f0;
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.search-category-select:hover {
+  background-color: #f1f5f9;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 14px;
+  font-size: 14px;
+  color: #0f172a;
+  background: transparent;
+  font-family: inherit;
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.search-submit-btn {
+  background-color: #febd69;
+  border: none;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.search-submit-btn:hover {
+  background-color: #ff9900;
+}
+
+/* Delivery Location (Single instance in header) */
+.nav-delivery-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: default;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+}
+
+.nav-delivery-location:hover {
+  background-color: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.loc-pin-icon {
+  color: #ea580c;
+  flex-shrink: 0;
+}
+
+.loc-text-col {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.loc-label-line {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.loc-city-line {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Customer Account Dropdown */
+.nav-account-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nav-account-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.nav-account-btn:hover,
+.nav-account-btn.active {
+  background-color: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.account-user-icon {
+  color: #0f172a;
+  flex-shrink: 0;
+}
+
+.account-btn-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.account-greeting {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.account-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.account-chevron {
+  transition: transform 0.2s ease;
+  color: #64748b;
+}
+
+.account-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* Compact Dropdown Card */
+.account-dropdown-card {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 250px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  padding: 8px;
+  z-index: 1050;
+  animation: dropdownFadeIn 0.15s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.account-card-header {
+  padding: 8px 10px;
+  background-color: #f8fafc;
+  border-radius: 6px;
+  margin-bottom: 4px;
+}
+
+.account-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.account-id {
+  font-size: 11.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.account-id strong {
+  color: #0284c7;
+}
+
+.account-dropdown-divider {
+  height: 1px;
+  background-color: #f1f5f9;
+  margin: 6px 0;
+}
+
+.account-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.account-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.account-menu-item:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.account-menu-item svg {
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.account-menu-item:hover svg {
+  color: #0f172a;
+}
+
+.menu-unread-badge {
+  margin-left: auto;
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+
+.menu-offers-badge {
+  margin-left: auto;
+  background-color: #fef08a;
+  color: #854d0e;
+  border: 1px solid #fde047;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+
+.account-logout-btn,
+.account-signin-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #dc2626;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+}
+
+.account-logout-btn:hover,
+.account-signin-btn:hover {
+  background-color: #fef2f2;
+}
+
+/* Shopping Cart */
+.nav-cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: #0f172a;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.nav-cart-btn:hover {
+  background-color: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #0f172a;
+}
+
+.cart-item-count {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  background-color: #ff9900;
+  color: #0f172a;
+  font-size: 11px;
+  font-weight: 800;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.cart-btn-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Single Sign Out Option in Top Bar */
+.nav-top-signout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f8fafc;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.nav-top-signout-btn:hover {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.nav-top-signin-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ff9900;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #ea580c;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+}
+
+.nav-top-signin-btn:hover {
+  background-color: #f59e0b;
+}
+
+/* ==========================================================================
+   2. SECOND NAVIGATION BAR
+   Layout: All Departments | Electronics | Fashion | Home & Kitchen | Grocery | Beauty
+   Optional right-side badges: 10% OFF | Free Delivery
+   ========================================================================== */
+
+.smartcart-second-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 24px;
+  min-height: 42px;
+  background-color: #ffffff;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Mobile Category Toggle Button (Hidden on desktop) */
+.mobile-departments-toggle {
+  display: none;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: none;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.mobile-departments-toggle:hover {
+  background-color: #f8fafc;
+}
+
+.toggle-chevron {
+  transition: transform 0.2s ease;
+}
+
+.toggle-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* Departments Link Row */
+.second-nav-departments {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.department-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #334155;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.department-link:hover {
+  color: #ea580c;
+  background-color: #f8fafc;
+}
+
+.dept-all-icon {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Right-Side Optional Perk Badges */
+.second-nav-perks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.perk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.15s ease;
+}
+
+.perk-badge:hover {
+  transform: scale(1.03);
+}
+
+.perk-coupon {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.perk-delivery {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+/* ==========================================================================
+   3. RESPONSIVE MEDIA QUERIES (Desktop, Tablet, Mobile)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .smartcart-top-bar {
+    gap: 12px;
+    padding: 8px 16px;
+  }
+
+  .smartcart-second-nav {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 860px) {
+  .nav-delivery-location .loc-label-line {
+    display: none;
+  }
+
+  .nav-delivery-location {
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .smartcart-top-bar {
+    flex-wrap: wrap;
+    padding: 8px 14px;
+    gap: 10px;
+  }
+
+  /* Place search bar on its own row on mobile */
+  .smartcart-search-bar {
+    order: 10;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .nav-delivery-location {
+    display: none; /* Keep mobile top row minimal */
+  }
+
+  .mobile-departments-toggle {
+    display: inline-flex;
+  }
+
+  /* Collapsible category menu on mobile */
+  .second-nav-departments {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    padding: 8px 12px;
+    z-index: 1000;
+  }
+
+  .second-nav-departments.mobile-open {
+    display: flex;
+  }
+
+  .department-link {
+    width: 100%;
+    padding: 10px 14px;
+  }
+
+  .second-nav-perks {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,5 @@
+{
+    "selected_model_name": "Random Forest",
+    "optimal_decision_threshold": 0.5,
+    "reference_date_for_days_since_signup": "2026-01-01"
+}

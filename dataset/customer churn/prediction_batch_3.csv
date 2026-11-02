@@ -1,0 +1,151 @@
+customer_id,signup_date,customer_age,gender,city_tier,membership_status,days_since_last_purchase,total_orders_lifetime,orders_last_30d,orders_prev_30_to_60d,total_spend_inr,avg_order_value,preferred_category,sessions_last_30d,avg_session_duration_min,cart_abandonments_last_30d,search_queries_last_30d,return_count,return_rate,cancellations_count,late_deliveries_count,customer_service_tickets,avg_rating_given,preferred_payment_mode
+AMZ_PRED3_1001,2024-01-03,50,Female,Tier 1,Prime,43,24,5,9,"₹51,434.64",2143.11,Grocery,16,22.9,1,11,1,0.04,0,0,1,3.9,Net Banking
+AMZ_PRED3_1002,2024-10-03,53,Male,Tier 2,Prime,41,24,3,9,"₹21,117.84",879.91,Electronics,29,20.2,0,17,0,0.0,0,0,0,4.1,UPI
+AMZ_PRED3_1003,2024-05-07,58,Male,Tier 3,Prime,19,26,9,8,"₹29,837.34",1147.59,Fashion,27,24.3,0,12,0,0.0,0,0,0,4.1,UPI
+AMZ_PRED3_1004,2024-06-19,46,Male,Tier 3,expired,8,38,5,4,"₹86,832.66",2285.07,Fashion,53,32.9,1,34,0,0.0,1,0,0,4.5,UPI
+AMZ_PRED3_1005,2023-03-01,65,Male,Tier 2,expired,26,32,9,4,"₹18,128.32",566.51,Home & Kitchen,56,19.9,4,34,0,0.0,1,1,0,4.1,Cash on Delivery
+AMZ_PRED3_1006,2024-07-27,30,Female,Tier 1,Plus,11,30,6,9,"₹50,400.30",1680.01,Beauty,26,27.7,3,14,1,0.03,0,0,1,5.0,Debit Card
+AMZ_PRED3_1007,2022-06-09,36,Male,Tier 2,Prime,26,24,2,1,"₹39,150.24",1631.26,Home & Kitchen,21,13.7,4,20,1,0.04,0,1,0,4.1,Net Banking
+AMZ_PRED3_1008,2021-06-23,43,Male,Tier 1,Plus,22,31,7,9,"₹61,386.82",1980.22,Home & Kitchen,23,27.9,1,40,0,0.0,0,0,1,4.9,Cash on Delivery
+AMZ_PRED3_1009,2021-04-01,43,Male,Tier 1,Prime,9,48,7,7,"₹115,140.96",2398.77,Electronics,20,33.1,4,28,0,0.0,0,0,1,4.6,Cash on Delivery
+AMZ_PRED3_1010,2021-03-12,61,Male,Tier 3,Prime,31,33,3,8,"₹54,392.91",1648.27,Home & Kitchen,39,16.2,2,30,0,0.0,1,1,1,4.6,Credit Card
+AMZ_PRED3_1011,2025-03-30,54,Female,Tier 1,Plus,41,36,3,7,"₹61,511.40",1708.65,Home & Kitchen,16,22.6,0,16,0,0.0,0,1,0,4.6,UPI
+AMZ_PRED3_1012,2022-06-30,37,Male,Tier 2,expired,21,31,7,2,"₹42,206.81",1361.51,Beauty,33,20.3,2,16,0,0.0,1,1,0,3.8,Credit Card
+AMZ_PRED3_1013,2021-01-11,42,Female,Tier 3,none,43,18,4,2,"₹14,501.88",805.66,Electronics,25,18.7,4,17,1,0.06,1,0,1,4.5,Net Banking
+AMZ_PRED3_1014,2022-10-23,36,Female,Tier 3,Plus,19,43,7,8,"₹58,749.18",1366.26,Beauty,33,30.9,0,24,0,0.0,0,0,0,4.2,UPI
+AMZ_PRED3_1015,2024-09-14,48,Female,Tier 3,Prime,16,49,9,5,"₹78,382.85",1599.65,Home & Kitchen,17,12.0,3,12,1,0.02,1,0,0,4.4,UPI
+AMZ_PRED3_1016,2023-07-15,54,Male,Tier 2,Plus,11,23,4,4,"₹17,372.13",755.31,Grocery,55,11.0,2,16,0,0.0,0,0,1,4.9,Cash on Delivery
+AMZ_PRED3_1017,2022-12-23,25,Male,Tier 1,expired,44,59,9,11,"₹74,013.14",1254.46,Books,34,15.2,0,41,0,0.0,1,1,0,4.6,Credit Card
+AMZ_PRED3_1018,2021-05-04,61,Male,Tier 3,Prime,34,44,9,3,"₹69,659.04",1583.16,Fashion,37,16.6,3,32,0,0.0,1,0,0,4.6,Cash on Delivery
+AMZ_PRED3_1019,2022-01-08,67,Male,Tier 1,Plus,7,21,9,4,"₹41,653.50",1983.5,Beauty,49,14.8,1,13,1,0.05,0,1,1,4.0,UPI
+AMZ_PRED3_1020,2025-02-18,37,Male,Tier 3,Plus,6,13,1,4,"₹5,625.36",432.72,Fashion,50,22.7,3,27,1,0.08,0,0,0,4.2,UPI
+AMZ_PRED3_1021,2022-01-04,64,Female,Tier 1,expired,1,13,7,2,"₹15,824.38",1217.26,Electronics,33,15.0,4,30,0,0.0,0,0,0,4.5,Credit Card
+AMZ_PRED3_1022,2022-09-02,55,Male,Tier 1,none,40,28,1,6,"₹66,534.72",2376.24,Electronics,56,21.0,0,21,0,0.0,1,1,1,4.9,UPI
+AMZ_PRED3_1023,2022-07-21,45,Female,Tier 3,Prime,33,13,3,6,"₹7,598.50",584.5,Electronics,44,19.5,4,23,0,0.0,0,1,0,4.5,Credit Card
+AMZ_PRED3_1024,2023-02-08,65,Male,Tier 2,Plus,41,15,1,4,"₹6,186.30",412.42,Fashion,44,10.0,4,24,0,0.0,1,0,1,4.9,Debit Card
+AMZ_PRED3_1025,2023-08-29,71,Female,Tier 1,none,27,44,0,7,"₹79,867.04",1815.16,Grocery,34,10.5,2,29,0,0.0,0,1,1,4.8,Debit Card
+AMZ_PRED3_1026,2024-10-21,67,Male,Tier 2,Prime,40,49,5,6,"₹74,406.99",1518.51,Home & Kitchen,38,13.6,4,14,1,0.02,1,0,0,4.4,Net Banking
+AMZ_PRED3_1027,2022-09-20,20,Male,Tier 3,Plus,8,42,2,7,"₹19,162.92",456.26,Grocery,47,16.5,4,26,1,0.02,1,1,1,4.4,Credit Card
+AMZ_PRED3_1028,2025-01-17,23,Male,Tier 3,Prime,15,32,6,9,"₹11,190.72",349.71,Books,56,27.7,1,41,0,0.0,0,0,1,4.7,UPI
+AMZ_PRED3_1029,2022-07-07,54,Male,Tier 2,Prime,21,17,4,4,"₹41,419.99",2436.47,Beauty,16,22.2,4,31,1,0.06,0,1,1,4.2,UPI
+AMZ_PRED3_1030,2024-05-24,30,Female,Tier 1,Prime,16,38,9,4,"₹12,050.94",317.13,Electronics,25,13.0,4,41,0,0.0,1,1,0,4.1,UPI
+AMZ_PRED3_1031,2023-10-28,40,Male,Tier 1,Prime,1,40,6,3,"₹25,872.40",646.81,Home & Kitchen,36,27.1,1,36,0,0.0,0,0,0,3.9,Debit Card
+AMZ_PRED3_1032,2021-10-23,55,Male,Tier 2,Prime,18,23,4,3,"₹9,051.88",393.56,Beauty,17,18.6,4,29,0,0.0,0,1,1,4.9,UPI
+AMZ_PRED3_1033,2024-03-12,53,Female,Tier 3,Prime,18,35,6,9,"₹47,533.85",1358.11,Beauty,36,16.6,3,44,1,0.03,0,1,1,4.7,Credit Card
+AMZ_PRED3_1034,2021-09-25,68,Female,Tier 3,expired,27,6,0,0,"₹6,507.54",1084.59,Home & Kitchen,58,23.1,4,25,0,0.0,0,0,1,4.3,UPI
+AMZ_PRED3_1035,2023-07-03,26,Male,Tier 2,Prime,4,34,9,4,"₹83,165.36",2446.04,Grocery,22,29.5,0,14,1,0.03,0,1,0,4.9,Credit Card
+AMZ_PRED3_1036,2023-07-15,38,Female,Tier 2,Prime,4,51,7,9,"₹104,565.30",2050.3,Electronics,47,23.8,4,14,1,0.02,0,1,0,4.7,UPI
+AMZ_PRED3_1037,2025-02-11,56,Female,Tier 1,Plus,40,23,8,0,"₹29,431.95",1279.65,Electronics,37,28.0,0,38,1,0.04,1,0,1,3.9,Debit Card
+AMZ_PRED3_1038,2023-05-06,53,Female,Tier 1,Plus,19,36,5,1,"₹62,678.16",1741.06,Home & Kitchen,40,22.2,0,44,1,0.03,0,1,0,4.0,Debit Card
+AMZ_PRED3_1039,2024-12-10,71,Female,Tier 1,expired,39,47,5,10,"₹72,197.17",1536.11,Home & Kitchen,17,10.6,1,32,0,0.0,1,1,1,4.3,UPI
+AMZ_PRED3_1040,2022-12-25,23,Male,Tier 2,Prime,31,16,1,7,"₹36,979.68",2311.23,Beauty,58,28.1,4,14,0,0.0,0,1,0,4.6,Cash on Delivery
+AMZ_PRED3_1041,2021-08-28,53,Female,Tier 3,expired,33,18,9,2,"₹16,499.16",916.62,Electronics,25,16.3,3,27,1,0.06,0,1,0,4.0,Net Banking
+AMZ_PRED3_1042,2022-04-15,19,Female,Tier 1,Plus,29,24,0,2,"₹34,066.32",1419.43,Fashion,53,12.7,0,35,1,0.04,1,1,1,4.6,Credit Card
+AMZ_PRED3_1043,2022-12-30,41,Female,Tier 3,Prime,20,32,6,6,"₹77,735.36",2429.23,Fashion,27,22.3,2,20,0,0.0,1,0,0,4.3,UPI
+AMZ_PRED3_1044,2024-10-24,32,Male,Tier 3,expired,34,44,5,3,"₹21,893.96",497.59,Electronics,41,33.0,3,16,1,0.02,0,0,1,4.3,UPI
+AMZ_PRED3_1045,2023-01-17,38,Male,Tier 2,Prime,43,33,9,0,"₹34,716.33",1052.01,Fashion,28,26.0,2,40,1,0.03,0,1,1,4.4,UPI
+AMZ_PRED3_1046,2025-04-03,47,Male,Tier 2,Prime,3,48,8,8,"₹79,652.64",1659.43,Grocery,16,18.3,1,32,0,0.0,1,0,1,3.9,Credit Card
+AMZ_PRED3_1047,2021-04-06,36,Female,Tier 2,Prime,30,46,8,7,"₹89,186.64",1938.84,Books,38,13.8,2,14,1,0.02,0,1,0,4.5,Debit Card
+AMZ_PRED3_1048,2023-01-27,60,Female,Tier 2,Plus,2,34,8,11,"₹78,759.64",2316.46,Electronics,20,34.4,3,37,1,0.03,0,0,1,4.7,Credit Card
+AMZ_PRED3_1049,2023-11-15,57,Female,Tier 2,expired,28,52,4,9,"₹23,692.24",455.62,Fashion,33,28.8,4,28,0,0.0,1,1,1,4.9,Credit Card
+AMZ_PRED3_1050,2024-09-11,55,Male,Tier 3,Prime,9,22,5,1,"₹36,539.36",1660.88,Beauty,48,27.0,4,13,0,0.0,0,1,0,5.0,Credit Card
+AMZ_PRED3_1051,2024-04-20,31,Male,Tier 1,Plus,36,42,7,9,"₹101,776.08",2423.24,Home & Kitchen,41,21.5,3,10,0,0.0,1,1,1,4.6,Debit Card
+AMZ_PRED3_1052,2021-04-11,33,Female,Tier 2,Prime,2,47,3,6,"₹35,851.60",762.8,Electronics,33,17.4,2,31,1,0.02,0,1,1,3.9,Debit Card
+AMZ_PRED3_1053,2024-06-30,34,Female,Tier 3,Prime,7,18,7,4,"₹28,144.26",1563.57,Fashion,22,18.0,4,20,1,0.06,1,0,0,4.9,Debit Card
+AMZ_PRED3_1054,2022-07-20,56,Female,Tier 3,Prime,22,46,7,2,"₹56,421.30",1226.55,Electronics,53,17.0,3,23,0,0.0,0,0,1,4.4,Debit Card
+AMZ_PRED3_1055,2021-04-28,37,Male,Tier 1,Plus,27,19,5,3,"₹45,314.62",2384.98,Home & Kitchen,20,33.2,1,12,1,0.05,1,1,1,4.0,Cash on Delivery
+AMZ_PRED3_1056,2022-10-19,71,Female,Tier 1,Prime,37,20,0,11,"₹43,978.40",2198.92,Electronics,45,20.5,4,27,1,0.05,1,1,1,3.9,UPI
+AMZ_PRED3_1057,2024-03-12,41,Male,Tier 3,Prime,30,24,0,6,"₹49,296.72",2054.03,Fashion,22,16.2,4,26,1,0.04,1,0,0,4.6,Net Banking
+AMZ_PRED3_1058,2023-06-10,22,Female,Tier 3,Prime,22,17,7,8,"₹40,731.83",2395.99,Fashion,25,34.2,4,14,0,0.0,0,0,1,4.4,UPI
+AMZ_PRED3_1059,2023-09-18,29,Female,Tier 2,Prime,1,25,7,4,"₹22,930.50",917.22,Beauty,30,33.0,1,22,1,0.04,0,1,0,4.6,UPI
+AMZ_PRED3_1060,2022-08-22,36,Male,Tier 3,expired,31,38,0,3,"₹16,585.10",436.45,Electronics,25,16.9,0,33,1,0.03,1,0,1,4.2,Net Banking
+AMZ_PRED3_1061,2023-07-24,57,Female,Tier 2,Prime,6,37,9,11,"₹49,141.18",1328.14,Beauty,49,26.0,2,13,0,0.0,1,1,1,4.1,UPI
+AMZ_PRED3_1062,2024-05-28,50,Male,Tier 2,Plus,15,44,3,5,"₹75,669.44",1719.76,Electronics,29,28.9,1,39,1,0.02,0,1,1,4.6,UPI
+AMZ_PRED3_1063,2021-02-05,23,Female,Tier 2,Plus,4,21,4,11,"₹22,518.30",1072.3,Beauty,42,13.6,0,19,0,0.0,0,0,1,4.9,Credit Card
+AMZ_PRED3_1064,2022-03-29,40,Female,Tier 1,Prime,4,33,4,10,"₹79,613.82",2412.54,Home & Kitchen,24,12.3,1,30,1,0.03,0,0,1,4.9,UPI
+AMZ_PRED3_1065,2022-08-18,35,Female,Tier 3,Plus,16,45,5,8,"₹19,202.85",426.73,Fashion,21,33.9,0,42,0,0.0,0,1,0,4.5,Credit Card
+AMZ_PRED3_1066,2023-05-26,29,Male,Tier 2,Prime,27,42,9,7,"₹58,410.24",1390.72,Books,24,14.8,0,31,0,0.0,0,0,0,3.9,Credit Card
+AMZ_PRED3_1067,2022-07-11,41,Female,Tier 1,Plus,26,43,5,8,"₹91,898.31",2137.17,Electronics,52,26.6,1,14,1,0.02,1,1,1,4.6,Credit Card
+AMZ_PRED3_1068,2023-12-23,54,Female,Tier 3,Prime,17,49,5,8,"₹101,337.39",2068.11,Electronics,50,15.9,2,31,0,0.0,0,1,0,4.7,Credit Card
+AMZ_PRED3_1069,2023-01-03,65,Male,Tier 2,Prime,30,43,4,2,"₹35,961.33",836.31,Books,58,14.1,4,37,1,0.02,1,1,0,4.3,Cash on Delivery
+AMZ_PRED3_1070,2024-12-29,71,Female,Tier 1,Prime,4,38,2,4,"₹66,693.04",1755.08,Home & Kitchen,31,16.4,0,38,0,0.0,1,0,1,4.2,Credit Card
+AMZ_PRED3_1071,2022-01-04,51,Male,Tier 1,Plus,23,45,8,2,"₹106,212.15",2360.27,Home & Kitchen,32,20.2,4,15,1,0.02,0,0,0,4.5,UPI
+AMZ_PRED3_1072,2021-07-04,45,Female,Tier 2,Plus,1,17,0,7,"₹26,790.47",1575.91,Fashion,49,21.1,3,17,0,0.0,1,1,1,4.7,Net Banking
+AMZ_PRED3_1073,2024-03-30,33,Male,Tier 1,Plus,10,36,5,0,"₹68,266.08",1896.28,Home & Kitchen,38,22.8,2,40,1,0.03,0,1,0,4.1,Debit Card
+AMZ_PRED3_1074,2025-03-18,31,Female,Tier 3,Plus,4,34,3,5,"₹55,858.26",1642.89,Fashion,55,12.6,2,37,0,0.0,0,1,0,4.1,Cash on Delivery
+AMZ_PRED3_1075,2021-12-26,32,Female,Tier 3,Prime,17,9,3,2,"₹10,167.93",1129.77,Beauty,53,29.2,2,27,1,0.11,0,0,1,4.4,Debit Card
+AMZ_PRED3_1076,2021-12-19,29,Male,Tier 2,Prime,37,20,1,3,"₹36,464.80",1823.24,Electronics,31,23.3,4,19,0,0.0,0,1,0,4.3,Credit Card
+AMZ_PRED3_1077,2022-11-01,25,Female,Tier 2,Prime,37,47,6,6,"₹84,453.83",1796.89,Home & Kitchen,42,21.8,0,28,0,0.0,1,1,1,3.9,UPI
+AMZ_PRED3_1078,2024-11-11,53,Male,Tier 2,none,37,19,6,5,"₹6,923.98",364.42,Home & Kitchen,59,33.8,0,20,0,0.0,1,0,1,4.7,UPI
+AMZ_PRED3_1079,2025-04-01,57,Female,Tier 1,Plus,11,46,2,8,"₹97,782.20",2125.7,Electronics,37,16.0,1,29,0,0.0,0,0,1,4.2,UPI
+AMZ_PRED3_1080,2022-01-14,44,Male,Tier 2,Plus,32,36,3,2,"₹86,789.88",2410.83,Home & Kitchen,43,14.7,2,19,1,0.03,1,1,1,4.7,Cash on Delivery
+AMZ_PRED3_1081,2023-04-10,42,Male,Tier 1,Prime,37,52,8,11,"₹92,183.00",1772.75,Fashion,40,18.9,2,40,0,0.0,0,1,0,4.1,Credit Card
+AMZ_PRED3_1082,2023-12-21,55,Male,Tier 1,Prime,7,29,8,4,"₹26,264.72",905.68,Grocery,52,20.5,4,26,0,0.0,0,1,0,4.6,UPI
+AMZ_PRED3_1083,2023-05-24,20,Female,Tier 1,Prime,34,27,5,4,"₹64,771.11",2398.93,Grocery,16,29.7,2,30,1,0.04,0,1,0,4.4,Credit Card
+AMZ_PRED3_1084,2023-09-10,20,Male,Tier 1,Prime,29,40,9,5,"₹43,132.00",1078.3,Electronics,54,15.4,1,10,0,0.0,0,1,1,4.0,UPI
+AMZ_PRED3_1085,2023-09-29,39,Female,Tier 2,Prime,22,38,9,11,"₹83,647.12",2201.24,Electronics,33,10.8,0,43,0,0.0,0,0,1,4.0,Cash on Delivery
+AMZ_PRED3_1086,2021-07-20,62,Male,Tier 2,Prime,18,16,0,5,"₹7,052.00",440.75,Electronics,21,27.7,4,13,0,0.0,0,0,1,4.7,UPI
+AMZ_PRED3_1087,2023-12-28,52,Male,Tier 2,Prime,31,38,1,5,"₹82,195.52",2163.04,Beauty,32,29.3,1,19,0,0.0,1,1,0,4.0,UPI
+AMZ_PRED3_1088,2021-12-22,61,Female,Tier 1,Prime,29,29,8,10,"₹47,125.58",1625.02,Home & Kitchen,28,12.8,3,16,0,0.0,1,1,0,3.8,Cash on Delivery
+AMZ_PRED3_1089,2023-01-30,38,Female,Tier 3,none,2,25,2,4,"₹31,386.25",1255.45,Home & Kitchen,33,32.0,3,31,1,0.04,1,1,0,4.6,UPI
+AMZ_PRED3_1090,2024-04-24,45,Female,Tier 1,Prime,38,24,5,6,"₹51,750.48",2156.27,Fashion,26,30.0,0,17,0,0.0,0,0,0,4.7,Debit Card
+AMZ_PRED3_1091,2023-02-08,67,Female,Tier 1,Prime,27,28,1,8,"₹44,696.68",1596.31,Electronics,42,17.0,2,34,0,0.0,0,1,1,4.5,Debit Card
+AMZ_PRED3_1092,2021-02-17,50,Female,Tier 1,Prime,28,19,5,1,"₹30,481.51",1604.29,Beauty,37,18.6,3,33,0,0.0,0,0,0,4.2,Credit Card
+AMZ_PRED3_1093,2021-12-05,24,Female,Tier 2,Plus,42,30,2,7,"₹19,649.70",654.99,Home & Kitchen,42,26.0,3,30,0,0.0,1,0,1,4.9,UPI
+AMZ_PRED3_1094,2022-02-11,34,Male,Tier 1,Prime,16,23,3,9,"₹7,389.44",321.28,Beauty,59,23.1,0,23,1,0.04,1,1,1,4.0,Cash on Delivery
+AMZ_PRED3_1095,2021-02-24,52,Male,Tier 1,Plus,33,30,4,1,"₹73,242.90",2441.43,Fashion,57,29.0,3,20,1,0.03,0,0,1,4.8,Credit Card
+AMZ_PRED3_1096,2021-04-06,27,Male,Tier 2,Plus,35,13,3,1,"₹29,182.92",2244.84,Electronics,58,18.7,1,29,1,0.08,0,0,0,4.0,Cash on Delivery
+AMZ_PRED3_1097,2024-06-24,67,Female,Tier 3,Prime,25,42,0,4,"₹65,792.58",1566.49,Grocery,50,18.4,0,40,0,0.0,0,0,1,4.3,Debit Card
+AMZ_PRED3_1098,2024-01-09,39,Female,Tier 2,expired,4,46,1,6,"₹40,705.86",884.91,Fashion,44,22.3,1,19,0,0.0,0,0,0,4.9,Credit Card
+AMZ_PRED3_1099,2024-07-09,69,Male,Tier 3,Prime,19,52,5,11,"₹101,392.20",1949.85,Beauty,41,30.9,4,42,0,0.0,0,1,1,4.7,UPI
+AMZ_PRED3_1100,2022-02-23,19,Male,Tier 2,Prime,31,37,4,6,"₹42,111.55",1138.15,Fashion,43,21.5,0,44,0,0.0,1,1,1,4.3,UPI
+AMZ_PRED3_1101,2023-09-17,23,Female,Tier 3,expired,6,28,4,2,"₹19,559.68",698.56,Home & Kitchen,57,23.3,0,16,0,0.0,1,0,1,4.2,Cash on Delivery
+AMZ_PRED3_1102,2021-09-24,52,Female,Tier 1,Prime,4,49,6,7,"₹71,555.19",1460.31,Electronics,53,30.7,0,14,1,0.02,1,0,1,4.5,Debit Card
+AMZ_PRED3_1103,2023-05-18,67,Male,Tier 1,expired,3,39,7,7,"₹39,040.17",1001.03,Home & Kitchen,18,20.7,2,20,1,0.03,1,0,0,4.5,Debit Card
+AMZ_PRED3_1104,2024-03-04,66,Female,Tier 3,Prime,18,30,6,3,"₹57,017.10",1900.57,Electronics,35,20.3,3,19,0,0.0,0,0,0,4.8,Net Banking
+AMZ_PRED3_1105,2023-03-16,28,Male,Tier 2,Prime,44,24,6,11,"₹53,495.76",2228.99,Fashion,48,24.1,2,27,0,0.0,0,0,0,4.1,UPI
+AMZ_PRED3_1106,2022-01-11,28,Male,Tier 1,expired,11,14,0,9,"₹13,274.80",948.2,Home & Kitchen,46,13.1,1,13,0,0.0,0,0,1,4.5,Cash on Delivery
+AMZ_PRED3_1107,2021-04-18,57,Female,Tier 3,Prime,24,34,8,6,"₹68,189.04",2005.56,Books,54,29.1,1,32,0,0.0,1,0,1,4.4,Credit Card
+AMZ_PRED3_1108,2024-03-04,36,Female,Tier 3,Prime,6,43,7,1,"₹29,197.86",679.02,Grocery,59,30.6,1,29,0,0.0,1,1,1,4.3,Credit Card
+AMZ_PRED3_1109,2025-01-06,18,Male,Tier 1,Prime,17,12,1,8,"₹6,591.12",549.26,Fashion,27,34.4,0,18,1,0.08,0,0,1,4.6,Cash on Delivery
+AMZ_PRED3_1110,2023-01-18,51,Male,Tier 1,expired,20,6,1,1,"₹13,172.52",2195.42,Beauty,32,34.7,4,19,1,0.17,1,1,1,4.3,Credit Card
+AMZ_PRED3_1111,2024-08-17,43,Male,Tier 2,Prime,20,13,7,4,"₹26,137.28",2010.56,Electronics,19,19.5,1,25,1,0.08,1,1,1,4.4,UPI
+AMZ_PRED3_1112,2021-01-14,59,Female,Tier 2,Plus,43,41,8,1,"₹102,120.75",2490.75,Books,55,29.1,4,19,1,0.02,0,1,1,4.9,Cash on Delivery
+AMZ_PRED3_1113,2025-05-19,32,Female,Tier 3,expired,9,46,5,8,"₹37,566.82",816.67,Fashion,47,20.7,0,35,1,0.02,1,1,0,4.7,Cash on Delivery
+AMZ_PRED3_1114,2024-01-18,56,Female,Tier 2,Prime,30,36,8,8,"₹33,862.68",940.63,Electronics,59,16.7,4,43,0,0.0,1,1,1,4.1,Cash on Delivery
+AMZ_PRED3_1115,2024-12-16,58,Male,Tier 1,Plus,37,20,4,7,"₹27,467.40",1373.37,Home & Kitchen,52,34.1,3,38,0,0.0,0,0,1,4.4,Credit Card
+AMZ_PRED3_1116,2021-12-03,51,Female,Tier 2,Prime,41,29,5,5,"₹19,414.63",669.47,Books,15,17.2,1,11,0,0.0,1,0,0,4.9,UPI
+AMZ_PRED3_1117,2021-02-18,24,Female,Tier 1,Prime,27,18,4,8,"₹9,986.94",554.83,Grocery,41,22.2,0,18,0,0.0,1,0,0,3.9,Cash on Delivery
+AMZ_PRED3_1118,2024-01-10,28,Male,Tier 3,Plus,29,44,6,0,"₹43,322.40",984.6,Fashion,53,16.9,1,11,0,0.0,0,1,1,4.8,Credit Card
+AMZ_PRED3_1119,2024-06-26,35,Female,Tier 3,Plus,1,23,2,11,"₹47,222.91",2053.17,Grocery,59,16.3,1,17,0,0.0,1,1,1,4.7,Credit Card
+AMZ_PRED3_1120,2022-07-08,23,Female,Tier 1,Plus,17,43,8,1,"₹33,710.71",783.97,Electronics,36,21.0,2,38,0,0.0,0,0,0,4.7,UPI
+AMZ_PRED3_1121,2023-09-02,20,Male,Tier 1,Prime,42,47,9,6,"₹107,924.69",2296.27,Home & Kitchen,37,12.4,4,10,0,0.0,0,1,0,4.2,Net Banking
+AMZ_PRED3_1122,2022-10-04,61,Male,Tier 1,Plus,8,43,0,4,"₹85,450.89",1987.23,Beauty,41,28.0,2,38,0,0.0,0,1,0,4.8,Cash on Delivery
+AMZ_PRED3_1123,2025-01-26,30,Female,Tier 2,Plus,44,18,7,8,"₹30,266.46",1681.47,Grocery,45,29.1,1,13,0,0.0,1,0,1,4.2,Debit Card
+AMZ_PRED3_1124,2022-08-13,35,Female,Tier 1,Prime,7,27,8,10,"₹56,497.50",2092.5,Fashion,25,29.0,2,41,0,0.0,0,1,0,4.5,Credit Card
+AMZ_PRED3_1125,2024-02-02,30,Male,Tier 2,Prime,41,19,0,10,"₹40,993.64",2157.56,Beauty,27,30.7,4,25,1,0.05,0,0,1,4.5,Credit Card
+AMZ_PRED3_1126,2023-03-25,68,Male,Tier 1,Prime,13,36,2,2,"₹13,614.48",378.18,Fashion,24,13.9,1,42,1,0.03,1,1,1,4.3,UPI
+AMZ_PRED3_1127,2023-08-25,50,Female,Tier 1,expired,2,11,1,1,"₹16,195.63",1472.33,Books,18,12.8,2,41,0,0.0,0,1,1,4.0,Debit Card
+AMZ_PRED3_1128,2022-12-12,41,Male,Tier 2,Prime,11,16,2,7,"₹21,693.44",1355.84,Fashion,51,23.2,2,35,0,0.0,1,1,0,4.0,Debit Card
+AMZ_PRED3_1129,2022-04-24,23,Male,Tier 2,Prime,43,23,2,9,"₹8,600.85",373.95,Electronics,27,16.7,1,31,0,0.0,0,1,1,4.5,UPI
+AMZ_PRED3_1130,2022-07-10,24,Male,Tier 1,Prime,39,32,0,7,"₹54,521.92",1703.81,Fashion,53,28.3,4,44,0,0.0,0,1,1,4.9,Cash on Delivery
+AMZ_PRED3_1131,2021-04-11,71,Female,Tier 2,Prime,39,29,9,4,"₹63,530.88",2190.72,Fashion,40,15.2,2,14,0,0.0,1,1,0,4.7,UPI
+AMZ_PRED3_1132,2024-03-02,62,Female,Tier 3,Plus,21,10,1,1,"₹5,218.60",521.86,Beauty,21,31.5,0,25,1,0.1,0,0,0,4.4,Net Banking
+AMZ_PRED3_1133,2022-06-11,24,Female,Tier 2,expired,32,29,1,4,"₹32,770.00",1130.0,Fashion,32,34.6,3,40,0,0.0,0,0,0,4.2,UPI
+AMZ_PRED3_1134,2022-03-24,38,Female,Tier 3,Plus,26,36,0,9,"₹39,654.00",1101.5,Electronics,57,26.3,1,41,0,0.0,0,1,1,4.2,Cash on Delivery
+AMZ_PRED3_1135,2023-04-16,43,Male,Tier 2,Plus,11,34,4,7,"₹29,960.80",881.2,Beauty,56,25.0,3,32,0,0.0,1,0,1,4.8,Net Banking
+AMZ_PRED3_1136,2023-05-11,45,Female,Tier 2,Prime,29,21,3,11,"₹19,780.53",941.93,Electronics,57,14.5,2,34,0,0.0,1,0,0,4.4,Credit Card
+AMZ_PRED3_1137,2022-03-16,48,Male,Tier 2,Plus,32,5,3,0,"₹8,555.45",1711.09,Electronics,40,11.1,1,33,1,0.2,1,0,1,4.7,Credit Card
+AMZ_PRED3_1138,2022-12-03,53,Female,Tier 3,Plus,11,15,0,4,"₹21,862.95",1457.53,Home & Kitchen,26,33.4,4,14,1,0.07,1,1,1,4.3,Cash on Delivery
+AMZ_PRED3_1139,2025-05-24,68,Male,Tier 2,Plus,11,24,8,7,"₹10,930.56",455.44,Home & Kitchen,24,24.3,3,14,0,0.0,1,1,1,3.9,Debit Card
+AMZ_PRED3_1140,2021-04-29,37,Male,Tier 2,Plus,10,22,8,0,"₹50,229.52",2283.16,Grocery,28,13.9,2,18,0,0.0,0,1,0,3.8,Debit Card
+AMZ_PRED3_1141,2022-09-01,62,Male,Tier 2,Plus,30,28,1,5,"₹68,678.12",2452.79,Grocery,49,10.8,4,11,1,0.04,1,0,1,5.0,Cash on Delivery
+AMZ_PRED3_1142,2023-02-27,53,Female,Tier 2,Prime,11,48,7,11,"₹19,873.92",414.04,Home & Kitchen,38,18.1,3,21,1,0.02,0,1,1,3.8,UPI
+AMZ_PRED3_1143,2021-02-13,61,Female,Tier 1,Prime,3,38,2,3,"₹88,432.46",2327.17,Fashion,28,24.7,4,43,0,0.0,0,0,1,4.0,Cash on Delivery
+AMZ_PRED3_1144,2021-09-22,51,Female,Tier 2,Prime,43,47,4,6,"₹40,878.72",869.76,Fashion,21,25.6,1,37,0,0.0,0,1,0,4.1,Credit Card
+AMZ_PRED3_1145,2024-09-10,71,Male,Tier 3,Prime,34,27,3,8,"₹54,015.66",2000.58,Fashion,40,21.9,1,35,1,0.04,1,0,1,4.5,Debit Card
+AMZ_PRED3_1146,2022-06-03,63,Female,Tier 1,Plus,19,39,2,10,"₹75,625.68",1939.12,Home & Kitchen,21,24.4,0,13,0,0.0,0,0,0,4.2,UPI
+AMZ_PRED3_1147,2025-06-03,28,Male,Tier 2,Prime,37,24,4,9,"₹44,250.48",1843.77,Beauty,29,12.6,4,25,0,0.0,1,1,0,4.0,Net Banking
+AMZ_PRED3_1148,2022-04-15,33,Female,Tier 2,Plus,5,41,7,6,"₹21,639.80",527.8,Beauty,17,21.7,4,32,0,0.0,0,0,0,4.2,Credit Card
+AMZ_PRED3_1149,2023-04-12,26,Male,Tier 2,Prime,38,54,9,10,"₹23,548.86",436.09,Fashion,38,22.4,0,29,1,0.02,0,1,0,4.1,UPI
+AMZ_PRED3_1150,2023-03-03,58,Male,Tier 1,Prime,11,19,7,1,"₹18,950.41",997.39,Grocery,59,20.6,0,33,0,0.0,0,0,1,3.9,Net Banking

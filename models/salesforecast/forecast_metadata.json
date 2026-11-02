@@ -1,0 +1,50 @@
+{
+    "training_median_sales_revenue_threshold": 264.275,
+    "feature_names": [
+        "Store_ID",
+        "Product_ID",
+        "Category",
+        "Units_Sold",
+        "Unit_Price",
+        "Discount_Percent",
+        "Promotion_Flag",
+        "Inventory_Level",
+        "Day_Of_Week",
+        "Month",
+        "Holiday_Flag",
+        "Marketing_Spend",
+        "Competitor_Price",
+        "Weather_Score"
+    ],
+    "numerical_features": [
+        "Units_Sold",
+        "Unit_Price",
+        "Discount_Percent",
+        "Promotion_Flag",
+        "Inventory_Level",
+        "Month",
+        "Holiday_Flag",
+        "Marketing_Spend",
+        "Competitor_Price",
+        "Weather_Score"
+    ],
+    "categorical_features": [
+        "Store_ID",
+        "Product_ID",
+        "Category",
+        "Day_Of_Week"
+    ],
+    "classification_test_metrics": {
+        "accuracy": 0.9826666666666667,
+        "precision": 0.9828178694158075,
+        "recall": 0.9873417721518988,
+        "f1_score": 0.9850746268656716,
+        "macro_f1": 0.9822034501577961
+    },
+    "regression_test_metrics": {
+        "mae": 28.653375833816526,
+        "rmse": 76.34175501171782,
+        "r2": 0.9862058519241175,
+        "wape": 0.05427680956376271
+    }
+}

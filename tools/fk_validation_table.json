@@ -1,0 +1,142 @@
+[
+  {
+    "child": "store_users.customer_id",
+    "parent": "customers.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "SET NULL",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "orders.customer_id",
+    "parent": "customers.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "CASCADE",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "order_items.order_id",
+    "parent": "orders.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "CASCADE",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "order_items.product_id",
+    "parent": "products.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "CASCADE",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "cart_items.customer_id",
+    "parent": "customers.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "CASCADE",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "cart_items.product_id",
+    "parent": "products.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "CASCADE",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "churn_predictions.customer_id",
+    "parent": "customers.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "CASCADE",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "retention_recommendations.customer_id",
+    "parent": "customers.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "CASCADE",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "customer_retention_perks.customer_id",
+    "parent": "customers.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "CASCADE",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "customer_retention_perks.used_order_id",
+    "parent": "orders.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "SET NULL",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "customer_notifications.customer_id",
+    "parent": "customers.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "CASCADE",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "customer_perk_redemptions.customer_id",
+    "parent": "customers.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "CASCADE",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "customer_perk_redemptions.order_id",
+    "parent": "orders.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "CASCADE",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  },
+  {
+    "child": "customer_perk_redemptions.perk_id",
+    "parent": "customer_retention_perks.id",
+    "child_type": "BIGINT",
+    "parent_type": "BIGINT",
+    "on_delete": "SET NULL",
+    "parent_created_first": true,
+    "parent_is_pk": true,
+    "valid": true
+  }
+]

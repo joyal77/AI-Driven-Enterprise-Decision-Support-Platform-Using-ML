@@ -1,0 +1,1862 @@
+{
+  "total_tables": 14,
+  "total_records": 2096,
+  "total_columns": 165,
+  "total_foreign_keys": 13,
+  "tables": {
+    "cart_items": {
+      "table": "cart_items",
+      "rows": 279,
+      "columns_count": 6,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "customer_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "product_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "quantity",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 2,
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "target_table": "products",
+          "from_col": "product_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        },
+        {
+          "id": 1,
+          "seq": 0,
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "indexes_count": 2,
+      "indexes": [
+        {
+          "name": "ix_cart_items_customer_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_cart_items_product_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "churn_predictions": {
+      "table": "churn_predictions",
+      "rows": 150,
+      "columns_count": 10,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "customer_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "churn_probability",
+          "type": "FLOAT",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "churn_prediction",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "risk_category",
+          "type": "VARCHAR(50)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "model_version",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "prediction_timestamp",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "shap_explanation",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "root_causes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "recommendations",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 1,
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "indexes_count": 2,
+      "indexes": [
+        {
+          "name": "ix_churn_predictions_customer_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_churn_predictions_risk_category",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "customer_notifications": {
+      "table": "customer_notifications",
+      "rows": 9,
+      "columns_count": 17,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "customer_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "campaign_id",
+          "type": "VARCHAR(100)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "title",
+          "type": "VARCHAR(255)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "message",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "channel",
+          "type": "VARCHAR(100)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "sender",
+          "type": "VARCHAR(150)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "coupon_code",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "perk_type",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "perk_value",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "is_read",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "dispatch_status",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "notification_type",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": "'retention_perk'",
+          "pk": 0
+        },
+        {
+          "cid": 15,
+          "name": "navigation_target",
+          "type": "VARCHAR(255)",
+          "notnull": false,
+          "default": "'/store/cart'",
+          "pk": 0
+        },
+        {
+          "cid": 16,
+          "name": "image_url",
+          "type": "VARCHAR(500)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 1,
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "indexes_count": 2,
+      "indexes": [
+        {
+          "name": "ix_customer_notifications_campaign_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customer_notifications_customer_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "customer_perk_redemptions": {
+      "table": "customer_perk_redemptions",
+      "rows": 4,
+      "columns_count": 11,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "customer_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "order_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "order_number",
+          "type": "VARCHAR(50)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "perk_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "campaign_id",
+          "type": "VARCHAR(100)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "benefit_type",
+          "type": "VARCHAR(50)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "coupon_code",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "discount_amount",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "redemption_date",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "status",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 3,
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "target_table": "customer_retention_perks",
+          "from_col": "perk_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        },
+        {
+          "id": 1,
+          "seq": 0,
+          "target_table": "orders",
+          "from_col": "order_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        },
+        {
+          "id": 2,
+          "seq": 0,
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "indexes_count": 6,
+      "indexes": [
+        {
+          "name": "ix_customer_perk_redemptions_coupon_code",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customer_perk_redemptions_order_number",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customer_perk_redemptions_order_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customer_perk_redemptions_customer_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customer_perk_redemptions_campaign_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "sqlite_autoindex_customer_perk_redemptions_1",
+          "unique": true,
+          "origin": "u",
+          "partial": false
+        }
+      ]
+    },
+    "customer_retention_perks": {
+      "table": "customer_retention_perks",
+      "rows": 6,
+      "columns_count": 19,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "customer_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "campaign_id",
+          "type": "VARCHAR(100)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "title",
+          "type": "VARCHAR(255)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "perk_type",
+          "type": "VARCHAR(50)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "perk_value",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "coupon_code",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "status",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "action_summary",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "root_cause_driver",
+          "type": "VARCHAR(255)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "channel",
+          "type": "VARCHAR(100)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "free_shipping",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0",
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "coupon_used",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0",
+          "pk": 0
+        },
+        {
+          "cid": 15,
+          "name": "shipping_used",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0",
+          "pk": 0
+        },
+        {
+          "cid": 16,
+          "name": "used_order_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 17,
+          "name": "used_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 18,
+          "name": "is_single_use",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "1",
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 1,
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "indexes_count": 3,
+      "indexes": [
+        {
+          "name": "ix_customer_retention_perks_campaign_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customer_retention_perks_customer_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customer_retention_perks_status",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "customers": {
+      "table": "customers",
+      "rows": 150,
+      "columns_count": 28,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "source_customer_id",
+          "type": "VARCHAR(50)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "signup_date",
+          "type": "DATE",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "customer_age",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "gender",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "city_tier",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "membership_status",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "days_since_last_purchase",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "total_orders_lifetime",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "orders_last_30d",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "orders_prev_30_to_60d",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "total_spend_inr",
+          "type": "VARCHAR(100)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "avg_order_value",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "preferred_category",
+          "type": "VARCHAR(100)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "sessions_last_30d",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 15,
+          "name": "avg_session_duration_min",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 16,
+          "name": "cart_abandonments_last_30d",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 17,
+          "name": "search_queries_last_30d",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 18,
+          "name": "return_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 19,
+          "name": "return_rate",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 20,
+          "name": "cancellations_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 21,
+          "name": "late_deliveries_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 22,
+          "name": "customer_service_tickets",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 23,
+          "name": "avg_rating_given",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 24,
+          "name": "preferred_payment_mode",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 25,
+          "name": "ground_truth_churn",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 26,
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 27,
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 0,
+      "foreign_keys": [],
+      "indexes_count": 6,
+      "indexes": [
+        {
+          "name": "ix_customers_preferred_category",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customers_ground_truth_churn",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customers_days_since_last_purchase",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customers_source_customer_id",
+          "unique": true,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customers_city_tier",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_customers_membership_status",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "data_integrity_audit_log": {
+      "table": "data_integrity_audit_log",
+      "rows": 668,
+      "columns_count": 9,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "check_type",
+          "type": "VARCHAR(100)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "customer_id",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "severity",
+          "type": "VARCHAR(20)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "expected_value",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "observed_value",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "resolution_status",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "details",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 0,
+      "foreign_keys": [],
+      "indexes_count": 4,
+      "indexes": [
+        {
+          "name": "ix_data_integrity_audit_log_check_type",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_data_integrity_audit_log_resolution_status",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_data_integrity_audit_log_severity",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_data_integrity_audit_log_customer_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "order_items": {
+      "table": "order_items",
+      "rows": 162,
+      "columns_count": 6,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "order_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "product_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "quantity",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "unit_price",
+          "type": "FLOAT",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "total_price",
+          "type": "FLOAT",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 2,
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "target_table": "products",
+          "from_col": "product_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        },
+        {
+          "id": 1,
+          "seq": 0,
+          "target_table": "orders",
+          "from_col": "order_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "indexes_count": 2,
+      "indexes": [
+        {
+          "name": "ix_order_items_order_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_order_items_product_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "orders": {
+      "table": "orders",
+      "rows": 132,
+      "columns_count": 16,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "order_number",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "customer_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "order_date",
+          "type": "TIMESTAMP",
+          "notnull": true,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "order_amount",
+          "type": "FLOAT",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "subtotal",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "tax_amount",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "shipping_amount",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "discount",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "payment_mode",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "order_status",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "shipping_address",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "return_status",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "voucher_code",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "wallet_credit_used",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": "0.0",
+          "pk": 0
+        },
+        {
+          "cid": 15,
+          "name": "free_shipping_applied",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": "0",
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 1,
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "indexes_count": 3,
+      "indexes": [
+        {
+          "name": "ix_orders_order_status",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_orders_order_number",
+          "unique": true,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_orders_customer_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "prediction_batches": {
+      "table": "prediction_batches",
+      "rows": 52,
+      "columns_count": 7,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "batch_status",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "total_customers",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "processed_customers",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "failed_customers",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "completed_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 0,
+      "foreign_keys": [],
+      "indexes_count": 1,
+      "indexes": [
+        {
+          "name": "ix_prediction_batches_batch_status",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "products": {
+      "table": "products",
+      "rows": 40,
+      "columns_count": 16,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "sku",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "title",
+          "type": "VARCHAR(200)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "product_name",
+          "type": "VARCHAR(200)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "category",
+          "type": "VARCHAR(100)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "price",
+          "type": "FLOAT",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "original_price",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "stock_quantity",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "rating",
+          "type": "FLOAT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "rating_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "image_url",
+          "type": "VARCHAR(500)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "is_prime",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "is_active",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 15,
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 0,
+      "foreign_keys": [],
+      "indexes_count": 3,
+      "indexes": [
+        {
+          "name": "ix_products_sku",
+          "unique": true,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_products_title",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_products_category",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "retention_recommendations": {
+      "table": "retention_recommendations",
+      "rows": 292,
+      "columns_count": 7,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "customer_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "recommendation_type",
+          "type": "VARCHAR(100)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "recommendation_description",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "status",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "updated_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 1,
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "indexes_count": 2,
+      "indexes": [
+        {
+          "name": "ix_retention_recommendations_status",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_retention_recommendations_customer_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "store_users": {
+      "table": "store_users",
+      "rows": 151,
+      "columns_count": 7,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "username",
+          "type": "VARCHAR(100)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "password_hash",
+          "type": "VARCHAR(255)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "role",
+          "type": "VARCHAR(50)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "customer_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "full_name",
+          "type": "VARCHAR(150)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 1,
+      "foreign_keys": [
+        {
+          "id": 0,
+          "seq": 0,
+          "target_table": "customers",
+          "from_col": "customer_id",
+          "to_col": "id",
+          "on_update": "NO ACTION",
+          "on_delete": "NO ACTION"
+        }
+      ],
+      "indexes_count": 3,
+      "indexes": [
+        {
+          "name": "ix_store_users_role",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_store_users_username",
+          "unique": true,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "ix_store_users_customer_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    },
+    "users": {
+      "table": "users",
+      "rows": 1,
+      "columns_count": 6,
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "name",
+          "type": "VARCHAR(100)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "email",
+          "type": "VARCHAR(100)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "password_hash",
+          "type": "VARCHAR(255)",
+          "notnull": true,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "role",
+          "type": "VARCHAR(50)",
+          "notnull": false,
+          "default": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "created_at",
+          "type": "TIMESTAMP",
+          "notnull": false,
+          "default": "CURRENT_TIMESTAMP",
+          "pk": 0
+        }
+      ],
+      "foreign_keys_count": 0,
+      "foreign_keys": [],
+      "indexes_count": 1,
+      "indexes": [
+        {
+          "name": "ix_users_email",
+          "unique": true,
+          "origin": "c",
+          "partial": false
+        }
+      ]
+    }
+  }
+}

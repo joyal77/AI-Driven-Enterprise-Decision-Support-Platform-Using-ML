@@ -1,0 +1,290 @@
+/* Minimal SmartCart Customer Messages UI */
+
+.msg-inbox-page {
+  min-height: calc(100vh - 120px);
+  background-color: #f8fafc;
+  padding: 2rem 1.25rem 4rem 1.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #0f1111;
+}
+
+.msg-inbox-container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Header */
+.msg-inbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.msg-header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.msg-inbox-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.msg-unread-pill {
+  background-color: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  line-height: 1.2;
+}
+
+.msg-header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.msg-btn-mark-all {
+  background: transparent;
+  border: none;
+  color: #007185;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 6px;
+  transition: color 0.15s ease;
+}
+
+.msg-btn-mark-all:hover {
+  color: #c7511f;
+  text-decoration: underline;
+}
+
+/* Minimal Filter Tabs */
+.msg-filter-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+}
+
+.msg-tab-btn {
+  background-color: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.msg-tab-btn:hover {
+  background-color: #f1f5f9;
+  color: #0f1111;
+}
+
+.msg-tab-btn.active {
+  background-color: #0f1111;
+  border-color: #0f1111;
+  color: #ffffff;
+}
+
+/* Message Stack */
+.msg-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Minimal Message Card */
+.msg-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.15s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.msg-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.msg-card.is-unread {
+  border-left: 4px solid #ff9900;
+  background-color: #ffffff;
+}
+
+/* Image Column (optional) */
+.msg-image-col {
+  flex-shrink: 0;
+  width: 88px;
+  height: 88px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.msg-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content Column */
+.msg-content-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.msg-text {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #1f2937;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Coupon Line */
+.msg-coupon-line {
+  margin-top: 8px;
+  font-size: 13.5px;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.msg-coupon-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 700;
+  color: #111827;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+}
+
+/* Action Container & Single Button */
+.msg-action-container {
+  margin-top: 12px;
+}
+
+.msg-btn-action {
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 8px;
+  padding: 7px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f1111;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.15s ease;
+  display: inline-block;
+  line-height: 1.3;
+}
+
+.msg-btn-action:hover {
+  background-color: #f7ca00;
+  border-color: #f2c200;
+}
+
+.msg-btn-action:active {
+  background-color: #f0b800;
+  transform: translateY(1px);
+}
+
+/* Empty State */
+.msg-empty-box {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.msg-empty-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.msg-empty-desc {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .msg-card {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .msg-image-col {
+    width: 72px;
+    height: 72px;
+  }
+
+  .msg-text {
+    font-size: 14px;
+  }
+
+  .msg-btn-action {
+    padding: 6px 14px;
+    font-size: 12.5px;
+  }
+}
+
+/* Redeemed Coupon Styles */
+.msg-coupon-code.used {
+  text-decoration: line-through;
+  color: #94a3b8;
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.msg-coupon-status-pill {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  background-color: #e2e8f0;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.msg-coupon-redeemed-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #15803d;
+  background-color: #dcfce7;
+  border: 1px solid #bbf7d0;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
