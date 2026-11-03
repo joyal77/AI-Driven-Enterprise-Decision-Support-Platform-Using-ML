@@ -74,7 +74,10 @@ const StoreLogin = () => {
         navigate('/store');
       }
     } catch (err) {
-      const msg = err.response?.data?.detail || err.message || 'Invalid Customer ID or password.';
+      const isTimeout = err.code === 'ECONNABORTED' || err.message?.toLowerCase().includes('timeout');
+      const msg = isTimeout
+        ? 'Backend is waking up from sleep (cold start). Please wait a few seconds and try again.'
+        : (err.response?.data?.detail || err.message || 'Invalid Customer ID or password.');
       setErrorMsg(msg);
     } finally {
       setLoading(false);
@@ -115,11 +118,10 @@ const StoreLogin = () => {
       localStorage.setItem('user', JSON.stringify(mlData.user));
       navigate('/dashboard');
     } catch (err) {
-      const msg =
-        err.response?.data?.detail ||
-        err.response?.data?.message ||
-        err.message ||
-        'Invalid administrator username or password.';
+      const isTimeout = err.code === 'ECONNABORTED' || err.message?.toLowerCase().includes('timeout');
+      const msg = isTimeout
+        ? 'Backend is waking up from sleep (cold start). Please wait a few seconds and try again.'
+        : (err.response?.data?.detail || err.response?.data?.message || err.message || 'Invalid administrator username or password.');
       setErrorMsg(msg);
     } finally {
       setLoading(false);
