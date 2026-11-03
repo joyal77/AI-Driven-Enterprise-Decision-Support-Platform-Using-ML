@@ -206,7 +206,7 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   font-size: 0.8rem;
 }
 
@@ -227,21 +227,96 @@
   text-decoration: underline;
 }
 
-.btn-demo-account-link {
-  background: transparent;
-  border: none;
-  padding: 0;
-  color: #4f46e5;
-  cursor: pointer;
-  font-size: 0.8rem;
-  font-weight: 600;
-  font-family: inherit;
-  transition: color 0.15s ease;
+/* Demo Credentials Information Box */
+.demo-credentials-box {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 11px 13px;
+  margin-bottom: 18px;
+  text-align: left;
 }
 
-.btn-demo-account-link:hover {
-  text-decoration: underline;
-  color: #4338ca;
+.demo-credentials-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.demo-credentials-icon {
+  color: #0284c7;
+  flex-shrink: 0;
+}
+
+.demo-credentials-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.demo-cred-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.demo-cred-row.extra {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-top: 2px;
+  padding-top: 6px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.demo-cred-label {
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.77rem;
+}
+
+.demo-cred-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #0f1111;
+  user-select: all;
+  -webkit-user-select: all;
+  cursor: text;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.demo-cred-text {
+  font-size: 0.76rem;
+  color: #334155;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.demo-cred-text code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #0f1111;
+  user-select: all;
+  -webkit-user-select: all;
+  cursor: text;
 }
 
 /* Submit Button */

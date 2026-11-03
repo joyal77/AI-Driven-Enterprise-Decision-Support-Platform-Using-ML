@@ -17,8 +17,8 @@ const StoreLogin = () => {
   });
 
   // Customer credentials
-  const [custUsername, setCustUsername] = useState('AMZ_PRED1_1001');
-  const [custPassword, setCustPassword] = useState('customer123');
+  const [custUsername, setCustUsername] = useState('');
+  const [custPassword, setCustPassword] = useState('');
   const [showCustPassword, setShowCustPassword] = useState(false);
 
   // Admin credentials
@@ -136,14 +136,6 @@ const StoreLogin = () => {
     }
   };
 
-  const handleFillDemoAdmin = (e) => {
-    e.preventDefault();
-    setAdminUsername('admin');
-    setAdminPassword('admin123');
-    setErrorMsg('');
-    setInfoMsg('');
-  };
-
   return (
     <div className="minimal-login-wrapper">
       <div className="minimal-login-card">
@@ -207,14 +199,11 @@ const StoreLogin = () => {
                 className="login-input"
                 value={custUsername}
                 onChange={(e) => setCustUsername(e.target.value)}
-                placeholder="AMZ_PRED1_1001"
+                placeholder="e.g. AMZ_PRED1_1001"
                 required
                 autoComplete="username"
                 autoFocus
               />
-              <span className="login-helper-text">
-                Demo customer: <code>AMZ_PRED1_1001</code>
-              </span>
             </div>
 
             <div className="login-form-group">
@@ -228,7 +217,7 @@ const StoreLogin = () => {
                   className="login-input password-input"
                   value={custPassword}
                   onChange={(e) => setCustPassword(e.target.value)}
-                  placeholder="Enter password"
+                  placeholder="Enter customer password"
                   required
                   autoComplete="current-password"
                 />
@@ -251,6 +240,30 @@ const StoreLogin = () => {
               >
                 Forgot Password?
               </button>
+            </div>
+
+            {/* Demo Credentials Box */}
+            <div className="demo-credentials-box">
+              <div className="demo-credentials-title">
+                <Info size={14} className="demo-credentials-icon" />
+                <span>Demo Credentials</span>
+              </div>
+              <div className="demo-credentials-content">
+                <div className="demo-cred-row">
+                  <span className="demo-cred-label">Demo Customer ID:</span>
+                  <code className="demo-cred-code">AMZ_PRED1_1001</code>
+                </div>
+                <div className="demo-cred-row">
+                  <span className="demo-cred-label">Password:</span>
+                  <code className="demo-cred-code">customer123</code>
+                </div>
+                <div className="demo-cred-row extra">
+                  <span className="demo-cred-label">Additional Customer IDs:</span>
+                  <span className="demo-cred-text">
+                    <code>AMZ_PRED1_1002</code>, <code>AMZ_PRED1_1003</code>, <code>AMZ_PRED1_1004</code>, etc.
+                  </span>
+                </div>
+              </div>
             </div>
 
             <button
@@ -276,7 +289,7 @@ const StoreLogin = () => {
                 className="login-input"
                 value={adminUsername}
                 onChange={(e) => setAdminUsername(e.target.value)}
-                placeholder="admin"
+                placeholder="e.g. admin"
                 required
                 autoComplete="username"
                 autoFocus
@@ -294,7 +307,7 @@ const StoreLogin = () => {
                   className="login-input password-input"
                   value={adminPassword}
                   onChange={(e) => setAdminPassword(e.target.value)}
-                  placeholder="Enter password"
+                  placeholder="Enter admin password"
                   required
                   autoComplete="current-password"
                 />
@@ -317,14 +330,24 @@ const StoreLogin = () => {
               >
                 Forgot Password?
               </button>
+            </div>
 
-              <button
-                type="button"
-                className="btn-demo-account-link"
-                onClick={handleFillDemoAdmin}
-              >
-                Use Demo Account
-              </button>
+            {/* Admin Demo Credentials Box */}
+            <div className="demo-credentials-box">
+              <div className="demo-credentials-title">
+                <Info size={14} className="demo-credentials-icon" />
+                <span>Admin Demo Credentials</span>
+              </div>
+              <div className="demo-credentials-content">
+                <div className="demo-cred-row">
+                  <span className="demo-cred-label">Admin Username:</span>
+                  <code className="demo-cred-code">admin</code>
+                </div>
+                <div className="demo-cred-row">
+                  <span className="demo-cred-label">Password:</span>
+                  <code className="demo-cred-code">admin123</code>
+                </div>
+              </div>
             </div>
 
             <button
