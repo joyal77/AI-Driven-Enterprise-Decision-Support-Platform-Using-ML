@@ -982,4 +982,346 @@
   font-size: 0.92rem;
 }
 
+/* ========================================================================== */
+/* CUSTOMER ANALYTICS RESPONSIVE TOOLBARS & TABLES                            */
+/* ========================================================================== */
+
+.cust-top-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.cust-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.cust-action-buttons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cust-action-btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.cust-search-form {
+  display: flex;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 17, 17, 0.08);
+  background: #ffffff;
+}
+
+.cust-search-input {
+  padding: 0.75rem 1rem;
+  border: none;
+  width: 320px;
+  font-size: 0.95rem;
+  outline: none;
+  font-family: inherit;
+  color: #0f1111;
+  min-width: 0;
+}
+
+.cust-search-btn {
+  border-radius: 0;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Prediction Data Source Selector Ribbon */
+.cust-source-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cust-source-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cust-source-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.cust-source-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cust-source-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 6px;
+  color: #0f1111;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.cust-upload-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 6px;
+  background: #232f3e;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+/* Risk Filter Toolbar */
+.cust-risk-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid #d5d9d9;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cust-risk-filter-group {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  padding-bottom: 2px;
+}
+
+.cust-risk-filter-label {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #565959;
+  white-space: nowrap;
+}
+
+.cust-risk-btn {
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.mobile-table-hint {
+  display: none;
+  font-size: 0.78rem;
+  color: #64748b;
+  padding: 4px 6px 8px 6px;
+  font-weight: 600;
+}
+
+/* Customer Details Profile Modal */
+.cust-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(19, 25, 33, 0.88);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 99999;
+  backdrop-filter: blur(5px);
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.cust-modal-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 98vw;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #ff9900;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  margin: 0 auto 3rem auto;
+  overflow: hidden;
+}
+
+.cust-modal-header {
+  background-color: #131921;
+  color: #ffffff;
+  padding: 1.15rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 4px solid #ff9900;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cust-modal-body {
+  padding: 1.75rem 1.75rem 3.5rem 1.75rem;
+  background-color: #eaeded;
+}
+
+.cust-modal-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.cust-modal-xai-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.15rem;
+}
+
+/* Media Queries for Customer Analytics */
+@media (max-width: 1023px) {
+  .cust-modal-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .cust-top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .cust-action-buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cust-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cust-search-form {
+    width: 100%;
+  }
+
+  .cust-search-input {
+    width: 100%;
+  }
+
+  .cust-source-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 12px;
+  }
+
+  .cust-source-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cust-source-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cust-source-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cust-upload-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cust-risk-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 12px;
+  }
+
+  .cust-risk-filter-group {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 6px;
+  }
+
+  .mobile-table-hint {
+    display: block;
+  }
+
+  .cust-modal-header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cust-modal-header button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cust-modal-body {
+    padding: 1rem 0.85rem 3rem 0.85rem;
+  }
+
+  .cust-modal-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .cust-modal-xai-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 

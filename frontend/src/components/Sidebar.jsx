@@ -10,15 +10,17 @@ import {
   Layers,
   ArrowRight,
   LogOut,
-  Sparkles
+  Sparkles,
+  X
 } from 'lucide-react';
 import { useStore } from '../context/StoreContext';
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
   const { loginDirectly } = useStore();
 
   const handleLogout = () => {
+    onClose?.();
     localStorage.removeItem('user');
     localStorage.removeItem('smartcart_user');
     navigate('/login');
@@ -26,6 +28,7 @@ const Sidebar = () => {
 
   const handleSwitchToStoreAdmin = (e) => {
     e.preventDefault();
+    onClose?.();
     // Directly log into the admin account of the e-commerce website with admin functions
     const adminUser = {
       id: 1,
@@ -38,15 +41,29 @@ const Sidebar = () => {
     navigate('/store/manage-products');
   };
 
+  const handleNavClick = () => {
+    onClose?.();
+  };
+
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? 'mobile-open' : ''}`} aria-label="Sidebar Navigation">
       <div>
         {/* Brand Header */}
         <div className="sidebar-brand">
-          <div className="brand-logo-container">
-            <span className="amazon-logo-text">amazon</span>
-            <span className="amazon-smile-curve"></span>
-            <span className="brand-badge">seller central</span>
+          <div className="brand-header-row">
+            <div className="brand-logo-container">
+              <span className="amazon-logo-text">amazon</span>
+              <span className="amazon-smile-curve"></span>
+              <span className="brand-badge">seller central</span>
+            </div>
+            <button
+              type="button"
+              className="sidebar-close-btn"
+              onClick={onClose}
+              aria-label="Close navigation menu"
+            >
+              <X size={20} />
+            </button>
           </div>
           <div className="brand-subtext">
             Sales Forecast & Churn Intelligence
@@ -87,26 +104,41 @@ const Sidebar = () => {
         {/* Navigation */}
         <nav className="sidebar-nav">
           <div className="nav-group-label">DECISION PLATFORM (ML)</div>
-          <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+          <NavLink
+            to="/dashboard"
+            onClick={handleNavClick}
+            className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
+          >
             <span className="nav-icon">📊</span>
             <span className="nav-label">Executive Dashboard</span>
           </NavLink>
 
-          <NavLink to="/upload" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+          <NavLink
+            to="/upload"
+            onClick={handleNavClick}
+            className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
+          >
             <span className="nav-icon">📦</span>
             <span className="nav-label">Upload Dataset</span>
           </NavLink>
 
-          <NavLink to="/churn-prediction" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+          <NavLink
+            to="/churn-prediction"
+            onClick={handleNavClick}
+            className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
+          >
             <span className="nav-icon">👥</span>
             <span className="nav-label">Customer Churn Prediction</span>
           </NavLink>
 
-          <NavLink to="/sales-forecast" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+          <NavLink
+            to="/sales-forecast"
+            onClick={handleNavClick}
+            className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
+          >
             <span className="nav-icon">📈</span>
             <span className="nav-label">Sales Forecast</span>
           </NavLink>
-
         </nav>
       </div>
 

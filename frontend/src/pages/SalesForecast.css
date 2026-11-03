@@ -2728,3 +2728,191 @@
   color: #0f1111;
   line-height: 1.4;
 }
+
+/* ========================================================================== */
+/* RESPONSIVE ENHANCEMENTS FOR SALES FORECAST PAGE (< 768px & < 480px)        */
+/* ========================================================================== */
+
+@media (max-width: 767px) {
+  .sales-forecast-page {
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .source-selector-ribbon {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .source-selector-tabs {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .source-tab-btn {
+    min-width: 100%;
+    width: 100%;
+    padding: 10px 12px;
+  }
+
+  .history-active-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px 12px;
+  }
+
+  .history-banner-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .history-stats-pill-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .history-stat-pill {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .history-banner-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .history-view-btn,
+  .history-clear-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .horizon-control-panel {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .horizon-left {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .horizon-button-group {
+    display: flex;
+    width: 100%;
+  }
+
+  .horizon-pill {
+    flex: 1;
+    text-align: center;
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+
+  .horizon-right {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .scenario-selector-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .scenario-select {
+    width: 100%;
+    height: 38px;
+  }
+
+  .view-pdf-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 8px 14px;
+  }
+
+  .kpi-main-forecast-card {
+    padding: 16px 14px;
+  }
+
+  .kpi-main-value {
+    font-size: 2rem;
+  }
+
+  .forecast-methodology-card {
+    padding: 16px 14px;
+  }
+
+  /* PDF Preview Modal on Mobile */
+  .pdf-modal-container {
+    width: 96vw;
+    height: 94vh;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+
+  .pdf-modal-header {
+    padding: 10px 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .pdf-modal-title-area {
+    width: 100%;
+  }
+
+  .pdf-modal-horizon-switch {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .pdf-horizon-chip {
+    flex: 1;
+    text-align: center;
+  }
+
+  .pdf-modal-controls {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pdf-zoom-controls {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .pdf-download-action-btn,
+  .pdf-close-action-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .kpi-main-value {
+    font-size: 1.65rem;
+  }
+
+  .svg-chart-container {
+    height: 220px;
+  }
+}

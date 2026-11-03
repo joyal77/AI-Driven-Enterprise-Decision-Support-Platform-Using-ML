@@ -510,3 +510,217 @@ body {
   color: #ffffff;
 }
 
+/* ========================================================================== */
+/* RESPONSIVE LAYOUT & MOBILE NAVIGATION                                      */
+/* ========================================================================== */
+
+.brand-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-close-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #d1d5db;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.sidebar-close-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.mobile-hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.mobile-hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 998;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+/* Universal Responsive Table Container */
+.table-responsive-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  border: 1px solid #d5d9d9;
+  background-color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+/* Tablet & Mobile (< 1024px) */
+@media (max-width: 1023px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    height: 100dvh;
+    width: min(290px, 82vw);
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.45);
+  }
+
+  .sidebar-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-hamburger-btn {
+    display: inline-flex;
+  }
+
+  .topbar {
+    padding: 0.65rem 1rem;
+  }
+
+  .topbar-title {
+    display: none; /* Hide large desktop title on tablet/mobile */
+  }
+
+  .topbar-divider {
+    display: none;
+  }
+
+  .content-area {
+    padding: 1.25rem 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+  .topbar {
+    padding: 0.55rem 0.75rem;
+  }
+
+  .topbar-store-btn {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    gap: 5px;
+  }
+
+  .topbar-logout-btn {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    gap: 4px;
+  }
+
+  .content-area {
+    padding: 1rem 0.75rem 4.5rem 0.75rem; /* extra bottom padding for bottom nav */
+    overflow-x: hidden;
+  }
+
+  /* Bottom Navigation Bar */
+  .mobile-bottom-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    height: calc(56px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background-color: #131921;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.25);
+    z-index: 990;
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.68rem;
+    font-weight: 600;
+    transition: color 0.15s ease;
+  }
+
+  .bottom-nav-item.active {
+    color: #ff9900;
+    font-weight: 800;
+  }
+
+  .bottom-nav-item:active {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .hide-on-mobile-sm {
+    display: none !important;
+  }
+}
+
+/* Very Narrow Phone (< 440px) */
+@media (max-width: 439px) {
+  .topbar-btn-text {
+    display: none; /* Icon-only on very narrow screens (320px-375px) */
+  }
+
+  .topbar-store-btn {
+    padding: 7px;
+    border-radius: 6px;
+  }
+
+  .topbar-logout-btn {
+    padding: 7px;
+    border-radius: 6px;
+  }
+
+  .amazon-logo-dark {
+    font-size: 1.15rem;
+  }
+
+  .platform-tag {
+    font-size: 0.82rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+

@@ -590,24 +590,14 @@ const CustomerAnalytics = () => {
   };
 
   return (
-    <div className="animate-fade-in">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
-        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap', width: '100%', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
+    <div className="animate-fade-in cust-top-container">
+      <div className="cust-top-bar">
+        <div className="cust-action-buttons">
           <button
             type="button"
             onClick={handleRunBatchPrediction}
             disabled={runningBatch}
-            className="btn-amazon-dark"
-            style={{
-              padding: '0.85rem 1.4rem',
-              fontSize: '1.05rem',
-              whiteSpace: 'nowrap',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              cursor: runningBatch ? 'wait' : 'pointer'
-            }}
+            className="btn-amazon-dark cust-action-btn"
           >
             {runningBatch ? '⏳ Scoring...' : '⚡ Re-run Churn Model'}
           </button>
@@ -616,43 +606,24 @@ const CustomerAnalytics = () => {
             type="button"
             onClick={handleBatchPdfPreview}
             disabled={previewingBatch}
-            className="btn-amazon-gold"
-            style={{
-              padding: '0.85rem 1.4rem',
-              fontSize: '1.05rem',
-              whiteSpace: 'nowrap',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              cursor: previewingBatch ? 'wait' : 'pointer'
-            }}
+            className="btn-amazon-gold cust-action-btn"
             title={`Preview PDF Report for ${customerSource === 'uploaded' ? 'Uploaded Dataset' : customerSource === 'store' ? 'Live Store' : 'All Customers'}`}
           >
             {previewingBatch
               ? '⏳ Opening PDF...'
               : customerSource === 'uploaded'
-              ? '👁️ View PDF (Uploaded Dataset)'
+              ? '👁️ View PDF (Uploaded)'
               : customerSource === 'store'
               ? '👁️ View PDF (Live Store)'
-              : '👁️ View PDF (All Profiles)'}
+              : '👁️ View PDF (All)'}
           </button>
 
           <button
             type="button"
             onClick={handleBatchPdfDownload}
             disabled={downloadingBatch}
-            className="btn-amazon-dark"
-            style={{
-              padding: '0.85rem 1.2rem',
-              fontSize: '1.05rem',
-              whiteSpace: 'nowrap',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              cursor: downloadingBatch ? 'wait' : 'pointer',
-              backgroundColor: '#374151',
-              color: '#ffffff'
-            }}
+            className="btn-amazon-dark cust-action-btn"
+            style={{ backgroundColor: '#374151', color: '#ffffff' }}
             title={`Download PDF Report for ${customerSource === 'uploaded' ? 'Uploaded Dataset' : customerSource === 'store' ? 'Live Store' : 'All Customers'}`}
           >
             <Download size={16} />
@@ -660,67 +631,42 @@ const CustomerAnalytics = () => {
           </button>
         </div>
 
-        {/* Amazon-style Search Bar */}
-          <form onSubmit={handleSearchSubmit} style={{ display: 'flex', border: '1px solid #d5d9d9', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 1px 3px rgba(15,17,17,0.08)' }}>
-            <input
-              type="text"
-              placeholder="Search Account ID, Prime Status, Category..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              style={{
-                padding: '0.85rem 1.2rem',
-                border: 'none',
-                width: '320px',
-                fontSize: '1.1rem',
-                outline: 'none',
-                fontFamily: 'inherit'
-              }}
-            />
-            <button type="submit" className="btn-amazon-gold" style={{ borderRadius: 0, padding: '0.85rem 1.4rem', fontSize: '1.1rem' }}>
-              🔍 Search
-            </button>
-          </form>
-        </div>
+        {/* Amazon-style Responsive Search Bar */}
+        <form onSubmit={handleSearchSubmit} className="cust-search-form">
+          <input
+            type="text"
+            placeholder="Search Account ID, Prime Status..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="cust-search-input"
+          />
+          <button type="submit" className="btn-amazon-gold cust-search-btn">
+            🔍 Search
+          </button>
+        </form>
       </div>
 
       {/* Customer Prediction Data Source Selector */}
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        background: '#ffffff',
-        border: '1px solid #d5d9d9',
-        borderRadius: '10px',
-        padding: '12px 18px',
-        marginBottom: '1.25rem',
-        boxShadow: '0 1px 4px rgba(0,0,0,0.05)',
-        flexWrap: 'wrap',
-        gap: '12px'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#64748b', letterSpacing: '0.05em' }}>
+      <div className="cust-source-bar">
+        <div className="cust-source-group">
+          <span className="cust-source-label">
             PREDICTION DATA SOURCE:
           </span>
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="cust-source-buttons">
             <button
               type="button"
               onClick={() => { setCustomerSource('store'); setPage(1); }}
+              className="cust-source-btn"
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '8px 14px',
-                borderRadius: '6px',
                 border: customerSource === 'store' ? '2px solid #ff9900' : '1px solid #cbd5e1',
                 background: customerSource === 'store' ? '#fef8e7' : '#f8fafc',
-                color: '#0f1111',
                 fontWeight: customerSource === 'store' ? 800 : 600,
-                fontSize: '0.88rem',
-                cursor: 'pointer'
               }}
             >
-              <ShoppingBag size={15} color="#e67e22" />
-              <span>🛒 SmartCart Live Store Customers (150 Accounts)</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <ShoppingBag size={15} color="#e67e22" />
+                <span>🛒 SmartCart Live Store (150 Accounts)</span>
+              </div>
               <span style={{
                 background: '#dcfce7',
                 color: '#166534',
@@ -735,22 +681,17 @@ const CustomerAnalytics = () => {
             <button
               type="button"
               onClick={() => { setCustomerSource('uploaded'); setPage(1); }}
+              className="cust-source-btn"
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '8px 14px',
-                borderRadius: '6px',
                 border: customerSource === 'uploaded' ? '2px solid #ff9900' : '1px solid #cbd5e1',
                 background: customerSource === 'uploaded' ? '#fef8e7' : '#f8fafc',
-                color: '#0f1111',
                 fontWeight: customerSource === 'uploaded' ? 800 : 600,
-                fontSize: '0.88rem',
-                cursor: 'pointer'
               }}
             >
-              <Upload size={15} color="#007185" />
-              <span>📁 Uploaded Dataset Customers</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Upload size={15} color="#007185" />
+                <span>📁 Uploaded Dataset Customers</span>
+              </div>
               <span style={{
                 background: '#fef3c7',
                 color: '#92400e',
@@ -765,18 +706,11 @@ const CustomerAnalytics = () => {
             <button
               type="button"
               onClick={() => { setCustomerSource('all'); setPage(1); }}
+              className="cust-source-btn"
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '8px 14px',
-                borderRadius: '6px',
                 border: customerSource === 'all' ? '2px solid #ff9900' : '1px solid #cbd5e1',
                 background: customerSource === 'all' ? '#fef8e7' : '#f8fafc',
-                color: '#0f1111',
                 fontWeight: customerSource === 'all' ? 800 : 600,
-                fontSize: '0.88rem',
-                cursor: 'pointer'
               }}
             >
               <span>🌐 All Profiles</span>
@@ -784,45 +718,25 @@ const CustomerAnalytics = () => {
           </div>
         </div>
 
-        <Link
-          to="/upload"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 14px',
-            borderRadius: '6px',
-            background: '#232f3e',
-            color: '#ffffff',
-            fontSize: '0.84rem',
-            fontWeight: 700,
-            textDecoration: 'none'
-          }}
-        >
+        <Link to="/upload" className="cust-upload-link">
           <Upload size={14} />
           <span>Upload Dataset (CSV)</span>
         </Link>
       </div>
 
-      {/* Filter Toolbar */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.75rem', backgroundColor: '#ffffff', padding: '1.1rem 1.5rem', borderRadius: '8px', border: '1px solid #d5d9d9' }}>
-        <div style={{ display: 'flex', gap: '0.65rem', alignItems: 'center' }}>
-          <span style={{ fontSize: '1.05rem', fontWeight: 800, color: '#565959' }}>Model Risk Level:</span>
+      {/* Responsive Filter Toolbar */}
+      <div className="cust-risk-filter-bar">
+        <div className="cust-risk-filter-group">
+          <span className="cust-risk-filter-label">Model Risk Level:</span>
           {['all', 'High Risk', 'Medium Risk', 'Low Risk'].map((r) => (
             <button
               key={r}
               onClick={() => { setRiskCategory(r); setPage(1); }}
+              className="cust-risk-btn"
               style={{
-                padding: '0.5rem 1.0rem',
-                borderRadius: '6px',
-                border: '1px solid',
                 borderColor: riskCategory === r ? '#ff9900' : '#d5d9d9',
-                fontWeight: 800,
-                fontSize: '1.05rem',
-                cursor: 'pointer',
                 backgroundColor: riskCategory === r ? '#ff9900' : '#ffffff',
                 color: riskCategory === r ? '#131921' : '#565959',
-                transition: 'all 0.15s ease'
               }}
             >
               {r === 'all' ? 'All Risk Levels' : r}
@@ -831,12 +745,15 @@ const CustomerAnalytics = () => {
         </div>
       </div>
 
+      <div className="mobile-table-hint">👉 Swipe table horizontally to view all account metrics</div>
+
       {loading ? (
         <div style={{ padding: '3rem', textAlign: 'center', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #d5d9d9' }}>
           <p style={{ color: '#565959' }}>Loading Amazon Customer Accounts...</p>
         </div>
       ) : (
-        <table className="data-table">
+        <div className="table-responsive-container">
+          <table className="data-table">
           <thead>
             <tr>
               <th>Account ID</th>
@@ -924,10 +841,11 @@ const CustomerAnalytics = () => {
             })}
           </tbody>
         </table>
+        </div>
       )}
 
       {/* Pagination */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1.25rem', backgroundColor: '#ffffff', padding: '0.85rem 1.25rem', borderRadius: '8px', border: '1px solid #d5d9d9' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1.25rem', backgroundColor: '#ffffff', padding: '0.85rem 1.25rem', borderRadius: '8px', border: '1px solid #d5d9d9', flexWrap: 'wrap', gap: '8px' }}>
         <span style={{ fontSize: '0.85rem', color: '#565959' }}>
           Showing Page <strong>{page}</strong> of {Math.ceil(total / 15)} (Total <strong>{total?.toLocaleString()}</strong> accounts)
         </span>
@@ -943,52 +861,11 @@ const CustomerAnalytics = () => {
 
       {/* Full Screen Customer Detail Executive Popup Window (Rendered at Document Body via React Portal) */}
       {selectedCustomer && createPortal(
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(19, 25, 33, 0.88)',
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-            zIndex: 99999,
-            backdropFilter: 'blur(5px)',
-            padding: '1.5rem 1rem',
-            overflowY: 'auto'
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: '12px',
-              width: '98vw',
-              maxWidth: '1600px',
-              display: 'flex',
-              flexDirection: 'column',
-              border: '3px solid #ff9900',
-              boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-              margin: '0 auto 3rem auto'
-            }}
-          >
+        <div className="cust-modal-overlay">
+          <div className="cust-modal-container">
             {/* Modal Header Bar */}
-            <div
-              style={{
-                backgroundColor: '#131921',
-                color: '#ffffff',
-                padding: '1.25rem 2rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                borderBottom: '4px solid #ff9900',
-                position: 'sticky',
-                top: 0,
-                zIndex: 10
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <div className="cust-modal-header">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                   <span className="amazon-logo-dark" style={{ fontSize: '1.8rem' }}>amazon</span>
                   <span className="amazon-smile-dark" style={{ width: '18px', height: '9px' }}></span>
@@ -1006,24 +883,24 @@ const CustomerAnalytics = () => {
                       <span>{copiedId === selectedCustomer.customer.source_customer_id ? 'Copied to Clipboard!' : 'Copy Customer ID'}</span>
                     </button>
                   </div>
-                  <h2 style={{ fontSize: '1.55rem', color: '#ffffff', fontWeight: 900 }}>
+                  <h2 style={{ fontSize: '1.4rem', color: '#ffffff', fontWeight: 900, margin: 0 }}>
                     Account Profile: <span style={{ color: '#febd69' }}>{selectedCustomer.customer.source_customer_id}</span>
                   </h2>
-                  <p style={{ fontSize: '1.05rem', color: '#d1d5db', marginTop: '0.1rem' }}>
+                  <p style={{ fontSize: '0.92rem', color: '#d1d5db', marginTop: '0.1rem' }}>
                     Amazon Seller Central Customer Intelligence & Risk Diagnostics
                   </p>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+              <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
                 <button
                   type="button"
                   onClick={handleCustomerPdfPreview}
                   disabled={previewingCust}
                   className="btn-amazon-gold"
                   style={{
-                    padding: '0.6rem 1.4rem',
-                    fontSize: '1.1rem',
+                    padding: '0.6rem 1.2rem',
+                    fontSize: '0.95rem',
                     fontWeight: 800,
                     borderRadius: '8px',
                     cursor: previewingCust ? 'wait' : 'pointer'
@@ -1034,7 +911,7 @@ const CustomerAnalytics = () => {
                 <button
                   onClick={closeModal}
                   className="btn-amazon-orange"
-                  style={{ padding: '0.6rem 1.4rem', fontSize: '1.1rem', fontWeight: 800, borderRadius: '8px' }}
+                  style={{ padding: '0.6rem 1.2rem', fontSize: '0.95rem', fontWeight: 800, borderRadius: '8px' }}
                 >
                   ✖ Close Profile Window
                 </button>
@@ -1042,9 +919,9 @@ const CustomerAnalytics = () => {
             </div>
 
             {/* Modal Scrollable Content Grid */}
-            <div style={{ padding: '2rem 2rem 4rem 2rem', backgroundColor: '#eaeded' }}>
+            <div className="cust-modal-body">
               {/* Top Summary Banner */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem', marginBottom: '1.75rem' }}>
+              <div className="cust-modal-summary-grid">
                 <div className="stat-card" style={{ borderTop: '4px solid #ff9900' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
                     <h3>Customer Account ID</h3>
@@ -1058,30 +935,30 @@ const CustomerAnalytics = () => {
                       <span>{copiedId === selectedCustomer.customer.source_customer_id ? 'Copied' : 'Copy'}</span>
                     </button>
                   </div>
-                  <div className="value" style={{ fontSize: '2.0rem', color: '#007185' }}>
+                  <div className="value" style={{ fontSize: '1.65rem', color: '#007185' }}>
                     {selectedCustomer.customer.source_customer_id}
                   </div>
-                  <span style={{ fontSize: '1.05rem', color: '#565959', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.92rem', color: '#565959', fontWeight: 600 }}>
                     Signup Date: {selectedCustomer.customer.signup_date || 'N/A'}
                   </span>
                 </div>
 
                 <div className="stat-card" style={{ borderTop: '4px solid #131921' }}>
                   <h3>Membership Status</h3>
-                  <div className="value" style={{ fontSize: '2.0rem', color: '#0f1111' }}>
+                  <div className="value" style={{ fontSize: '1.65rem', color: '#0f1111' }}>
                     {selectedCustomer.customer.membership_status || 'Standard'}
                   </div>
-                  <span style={{ fontSize: '1.05rem', color: '#565959', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.92rem', color: '#565959', fontWeight: 600 }}>
                     City Tier: {selectedCustomer.customer.city_tier || 'Tier 1'}
                   </span>
                 </div>
 
                 <div className="stat-card" style={{ borderTop: '4px solid #cc0c39' }}>
                   <h3>Model Churn Probability</h3>
-                  <div className="value" style={{ color: selectedCustomer.prediction?.churn_probability >= 50 ? '#cc0c39' : '#007600' }}>
+                  <div className="value" style={{ color: selectedCustomer.prediction?.churn_probability >= 50 ? '#cc0c39' : '#007600', fontSize: '1.65rem' }}>
                     {selectedCustomer.prediction?.churn_probability !== null ? `${selectedCustomer.prediction.churn_probability}%` : 'N/A'}
                   </div>
-                  <span style={{ fontSize: '1.05rem', color: '#565959', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.92rem', color: '#565959', fontWeight: 600 }}>
                     Threshold Applied: {selectedCustomer.prediction?.decision_threshold || 0.5}
                   </span>
                 </div>
@@ -1095,17 +972,15 @@ const CustomerAnalytics = () => {
                         : selectedCustomer.prediction?.risk_category === 'Medium Risk'
                         ? 'badge-medium'
                         : 'badge-low'
-                    } style={{ fontSize: '1.4rem', padding: '0.6rem 1.2rem' }}>
+                    } style={{ fontSize: '1.1rem', padding: '0.4rem 0.85rem' }}>
                       {selectedCustomer.prediction?.risk_category || 'Unanalyzed'}
                     </span>
                   </div>
-                  <span style={{ fontSize: '1.05rem', color: '#565959', fontWeight: 600, marginTop: '0.6rem', display: 'inline-block' }}>
+                  <span style={{ fontSize: '0.92rem', color: '#565959', fontWeight: 600, marginTop: '0.6rem', display: 'inline-block' }}>
                     Model: {selectedCustomer.prediction?.model_version || 'Random Forest v1.0'}
                   </span>
                 </div>
               </div>
-
-
 
               {/* Explainable AI: Root Cause Analysis (Customer-Specific SHAP Decision Attribution) */}
               <div
@@ -1137,7 +1012,7 @@ const CustomerAnalytics = () => {
 
                 {/* Customer-Specific Model Decision Attribution (SHAP) */}
                 {selectedCustomer.prediction?.shap_explanation && selectedCustomer.prediction.shap_explanation.length > 0 ? (
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.15rem' }}>
+                  <div className="cust-modal-xai-grid">
                     {selectedCustomer.prediction.shap_explanation.map((item, idx) => {
                       const isRisk = item.impact?.toLowerCase().includes('increase') || item.direction === 'positive';
                       const isProtect = item.impact?.toLowerCase().includes('protect') || item.direction === 'negative';
